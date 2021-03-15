@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 public class IntroActivity extends AppCompatActivity {
+    //인트로
 
     Handler handler = new Handler();
     Runnable r = new Runnable() {

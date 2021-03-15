@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class JoinActivity extends AppCompatActivity {
 
-
+    //회원가입
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

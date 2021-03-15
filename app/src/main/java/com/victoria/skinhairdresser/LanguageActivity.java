@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 public class LanguageActivity extends AppCompatActivity {
-
+    //언어 설정 페이지
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

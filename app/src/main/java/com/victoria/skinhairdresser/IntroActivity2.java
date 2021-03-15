@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class IntroActivity2 extends AppCompatActivity {
-
+    // 인트로 영상 재생
     Button next_btn;
 
     @Override

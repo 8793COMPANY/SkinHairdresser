@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class LetOutActivity extends AppCompatActivity {
-
+    //토출하기 화면
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
