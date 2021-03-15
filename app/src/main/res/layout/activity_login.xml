@@ -5,7 +5,131 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/login_image"
-    tools:context=".LoginActivity">
+    android:background="@drawable/login_background"
+    tools:context=".LoginActivity"
+    android:weightSum="1280">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="652"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="378"
+        android:orientation="horizontal"
+        android:weightSum="720">
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="580"
+            android:orientation="vertical"
+            android:weightSum="378">
+
+
+            <EditText
+                android:id="@+id/model_num"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="80"
+                android:background="@drawable/login_model_num_box"
+                android:gravity="center"
+                android:hint="@string/model_num"
+                android:textColorHint="@color/main_brown"></EditText>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"></LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="80"
+                android:background="@drawable/login_btn_img"
+                android:text="@string/login"
+                android:textColor="@color/white"></androidx.appcompat.widget.AppCompatButton>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="26"
+                android:orientation="horizontal"
+                android:weightSum="580">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="398"></View>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="26"
+                    android:background="@drawable/auto_login_btn_off"></androidx.appcompat.widget.AppCompatButton>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"></View>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="146"
+                    android:text="@string/auto_login"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="top"
+                    android:gravity="top"
+                    android:textColor="@color/main_brown"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="54"></LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/join_btn"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/join_btn_img"
+                android:layout_weight="100"
+                android:text="@string/join"
+                android:textColor="@color/white"></androidx.appcompat.widget.AppCompatButton>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="250"></LinearLayout>
 
 </LinearLayout>

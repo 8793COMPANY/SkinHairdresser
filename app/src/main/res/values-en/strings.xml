@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SkinHairdresser</string>
+    <string name="login">login</string>
+    <string name="join">sign up</string>
+    <string name="model_num">Enter Model Number</string>
+    <string name="auto_login">Auto Login</string>
+
+</resources>

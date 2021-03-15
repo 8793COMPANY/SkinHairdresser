@@ -4,9 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/language_image"
+    android:background="@drawable/language_background"
     android:orientation="vertical"
+    android:weightSum="1280"
     tools:context=".LanguageActivity">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="494"></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="532"
+        android:orientation="horizontal"
+        android:weightSum="720">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="580"
+            android:orientation="vertical"
+            android:weightSum="532"
+            android:background="@drawable/language_setting_box">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/korean"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="133"
+                android:background="#00000000"></androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/english"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="133"
+                android:background="#00000000"></androidx.appcompat.widget.AppCompatButton>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/chinese"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="133"
+                android:background="#00000000"></androidx.appcompat.widget.AppCompatButton>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/japanese"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="133"
+                android:background="#00000000"></androidx.appcompat.widget.AppCompatButton>
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="254"></LinearLayout>
 </LinearLayout>
