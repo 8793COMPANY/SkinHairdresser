@@ -1,12 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/start_image"
+    android:background="#fbf0e2"
     android:orientation="vertical"
     tools:context=".StartActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1280"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="140"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="54"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="48"
+                android:weightSum="720"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_weight="48"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+                <ImageButton
+                    android:layout_weight="40"
+                    android:layout_width="0dp"
+                    android:layout_height="40px"
+                    android:background="@drawable/start_close_btn" />
+
+                <View
+                    android:layout_weight="130"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:layout_weight="284"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textColor="#bc8b6c"
+                    android:text="피부 진단 시작하기" />
+
+                <View
+                    android:layout_weight="118"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+                <ImageButton
+                    android:layout_weight="52"
+                    android:layout_width="0dp"
+                    android:layout_height="52px"
+                    android:background="@drawable/start_check_wifi" />
+
+                <View
+                    android:layout_weight="48"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="50"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
