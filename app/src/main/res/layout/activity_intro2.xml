@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/intro_image2"
+    tools:context=".IntroActivity2">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="넘어가기"></androidx.appcompat.widget.AppCompatButton>
+
+</LinearLayout>
