@@ -25,6 +25,8 @@ import com.victoria.skinhairdresser.cw.CustomWebView;
 import java.util.HashMap;
 import java.util.Map;
 
+import java.util.HashMap;
+import java.util.Map;
 
 import at.grabner.circleprogress.CircleProgressView;
 
