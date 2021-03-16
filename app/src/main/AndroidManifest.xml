@@ -4,8 +4,13 @@
 
     <!-- 인터넷 권한 -->
     <uses-permission android:name="android.permission.INTERNET"/>
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
+=======
+    <!-- 바이브 권한 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+>>>>>>> e545a055f092363a0116c7a9e0e99b83f084167b
 
     <application
         android:allowBackup="true"
@@ -13,17 +18,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.SkinHairdresser">
-        <activity android:name=".IntroActivity2"></activity>
-        <activity android:name=".LanguageActivity" />
-        <activity android:name=".ManageActivity" />
-        <activity android:name=".JoinActivity" />
-        <activity android:name=".IntroActivity">
+        <activity android:name=".IntroActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter></activity>
+        <activity android:name=".LanguageActivity" />
+        <activity android:name=".ManageActivity" />
+        <activity android:name=".JoinActivity" />
+        <activity android:name=".IntroActivity">
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RecommendActivity" />
@@ -31,7 +37,8 @@
         <activity android:name=".ResultActivity" />
         <activity android:name=".ConfirmActivity" />
         <activity android:name=".LetOutActivity" />
-        <activity android:name=".StartActivity" />
+        <activity android:name=".StartActivity" >
+        </activity>
         <activity android:name=".SettingActivity" />
         <activity android:name=".MainActivity"></activity>
     </application>

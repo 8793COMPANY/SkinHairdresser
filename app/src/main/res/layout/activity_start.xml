@@ -206,7 +206,7 @@
                 android:gravity="center"
                 android:textSize="20dp"
                 style="@style/DEFAULT_FONT_STYLE"
-                android:text="첫 번째 측정 중 ···" />
+                android:text="스트리밍 대기 중 ···" />
 
             <!--
             <View
@@ -224,7 +224,7 @@
                 android:gravity="center"
                 android:textSize="18dp"
                 style="@style/DEFAULT_FONT_STYLE"
-                android:text="측정이 완료될 때까지 피부에서 떼지 마세요" />
+                android:text="스트리밍 시작하기 버튼을 눌러주세요" />
 
         </LinearLayout>
 

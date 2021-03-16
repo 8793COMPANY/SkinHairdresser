@@ -82,7 +82,7 @@ public class CustomWebView extends WebView {
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         //canvas.drawRoundRect(new RectF(0, 0, width, height), cornerRadius, cornerRadius, paint);
         canvas.translate(getWidth()/2f,getHeight()/2f);
-        canvas.drawCircle(0,0, getHeight()/2f, paint);
+        canvas.drawCircle(0,0, getHeight()/3.5f, paint);
         //canvas.drawCircle(0, 0, height, paint);
 
         return mask;
