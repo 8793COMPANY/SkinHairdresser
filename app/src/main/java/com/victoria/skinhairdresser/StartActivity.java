@@ -21,11 +21,8 @@ import android.widget.Toast;
 
 import com.victoria.skinhairdresser.cw.CustomWebView;
 
-<<<<<<< HEAD
-=======
 import java.util.HashMap;
 import java.util.Map;
->>>>>>> e545a055f092363a0116c7a9e0e99b83f084167b
 
 import at.grabner.circleprogress.CircleProgressView;
 
