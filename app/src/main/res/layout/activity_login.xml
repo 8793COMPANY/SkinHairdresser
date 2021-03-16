@@ -109,7 +109,7 @@
                 android:id="@+id/join_btn"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:background="@drawable/join_btn_img"
+                android:background="@drawable/brown_btn_img"
                 android:layout_weight="100"
                 android:text="@string/join"
                 android:textColor="@color/white"></androidx.appcompat.widget.AppCompatButton>

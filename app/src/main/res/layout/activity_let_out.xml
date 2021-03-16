@@ -4,9 +4,211 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/let_out_image"
+    android:background="@color/background_brown"
     android:orientation="vertical"
-    tools:context=".LetOutActivity">
+    tools:context=".LetOutActivity"
+    android:weightSum="1280">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="140"
+        android:orientation="vertical"
+        android:weightSum="140">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="34"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="72"
+            android:orientation="horizontal"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40"></View>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/finish_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="72"
+                android:background="@drawable/finish_btn"></androidx.appcompat.widget.AppCompatButton>
 
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="496"
+                android:text="화장품 토출하기"
+                android:textColor="@color/main_brown"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:gravity="center"></TextView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bluetooth_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="72"
+                android:background="@drawable/bluetooth_btn"></androidx.appcompat.widget.AppCompatButton>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40"></View>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="34"></View>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/main_brown"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="869"
+        android:orientation="vertical"
+        android:weightSum="869">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="49"></LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="49"
+            android:text="화장품 토출 중..."
+            android:gravity="center"
+            android:textColor="@color/main_brown"
+            android:textSize="20dp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="46"
+            android:gravity="center"
+            android:textColor="@color/main_brown"
+            android:text="토출이 완료될 때까지 손을 빼지 마세요"></TextView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="152"></LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="400"
+            android:orientation="horizontal"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="104"></View>
+
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="512"
+                android:background="@drawable/let_out_hand_img"></ImageView>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="104"></View>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:orientation="horizontal"
+        android:weightSum="720">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/let_out_btn"
+            android:background="@drawable/brown_btn_img"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="580"
+            android:text="화장품 토출하기"
+            android:textColor="@color/white"></androidx.appcompat.widget.AppCompatButton>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:orientation="horizontal"
+        android:weightSum="720">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/confirm_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="580"
+            android:background="@drawable/white_btn_img"
+            android:text="앰플 잔량 확인하기"
+            android:textColor="@color/main_brown"></androidx.appcompat.widget.AppCompatButton>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50"></LinearLayout>
 </LinearLayout>
