@@ -1,12 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fbf0e2"
     android:orientation="vertical"
     tools:context=".StartActivity">
+
+    <!-- 휠 프로그레스 프레임 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1280"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="430"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="430"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="144.5"/>
+
+            <at.grabner.circleprogress.CircleProgressView
+                android:id="@+id/progress_circular"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="430"
+
+                app:cpv_blockCount="50"
+                app:cpv_blockScale="0.2"
+                app:cpv_barColor="#bc8b6c"
+                app:cpv_rimColor="@color/white"
+
+                app:cpv_innerContourColor="#fbf0e2"
+                app:cpv_outerContourColor="#fbf0e2"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="145.5"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="418.3"/>
+
+    </LinearLayout>
+
+    <!-- 커스텀 웹뷰 프레임 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1280"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="430"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="430"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="144.5"/>
+
+            <com.victoria.skinhairdresser.cw.CustomWebView
+                android:id="@+id/wv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="430"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="145.5"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="418.3"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,13 +117,14 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="54"/>
+                android:layout_weight="44"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="48"
                 android:weightSum="720"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <View
@@ -38,9 +133,10 @@
                     android:layout_height="match_parent"/>
 
                 <ImageButton
+                    android:id="@+id/start_close_btn"
                     android:layout_weight="40"
                     android:layout_width="0dp"
-                    android:layout_height="40px"
+                    android:layout_height="20dp"
                     android:background="@drawable/start_close_btn" />
 
                 <View
@@ -52,7 +148,10 @@
                     android:layout_weight="284"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:textColor="#bc8b6c"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    style="@style/DEFAULT_FONT_STYLE"
                     android:text="피부 진단 시작하기" />
 
                 <View
@@ -61,9 +160,10 @@
                     android:layout_height="match_parent"/>
 
                 <ImageButton
+                    android:id="@+id/start_check_wifi"
                     android:layout_weight="52"
                     android:layout_width="0dp"
-                    android:layout_height="52px"
+                    android:layout_height="match_parent"
                     android:background="@drawable/start_check_wifi" />
 
                 <View
@@ -76,9 +176,154 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="50"/>
+                android:layout_weight="44"/>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#bc8b6c"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="57"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/start_tv_1"
+                android:layout_weight="33.5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="20dp"
+                style="@style/DEFAULT_FONT_STYLE"
+                android:text="첫 번째 측정 중 ···" />
+
+            <!--
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"/>
+            -->
+
+            <TextView
+                android:id="@+id/start_tv_2"
+                android:layout_weight="27.6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="18dp"
+                style="@style/DEFAULT_FONT_STYLE"
+                android:text="측정이 완료될 때까지 피부에서 떼지 마세요" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="132"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="430"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="148.8"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70" />
+
+            <LinearLayout
+                android:id="@+id/start_stream_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="580"
+                android:background="@drawable/start_stream_btn">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    style="@style/WHITE_FONT_STYLE"
+                    android:text="스트리밍 시작하기" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70" />
+
+            <LinearLayout
+                android:id="@+id/start_20_sec"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="580"
+                android:background="@drawable/start_20_sec">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    style="@style/DEFAULT_FONT_STYLE"
+                    android:text="측정하기" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"/>
 
     </LinearLayout>
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DEFAULT_FONT_STYLE">
+        <item name="android:textColor">#bc8b6c</item>
+        <!-- 윤고딕? -->
+        <item name="fontFamily"></item>
+    </style>
+
+    <style name="WHITE_FONT_STYLE">
+        <item name="android:textColor">#FFFFFF</item>
+        <!-- 윤고딕? -->
+        <item name="fontFamily"></item>
+    </style>
+</resources>
