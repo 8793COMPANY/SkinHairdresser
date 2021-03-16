@@ -21,6 +21,10 @@ import android.widget.Toast;
 
 import com.victoria.skinhairdresser.cw.CustomWebView;
 
+
+import java.util.HashMap;
+import java.util.Map;
+
 import java.util.HashMap;
 import java.util.Map;
 

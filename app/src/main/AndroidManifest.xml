@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
+
     <!-- 바이브 권한 -->
     <uses-permission android:name="android.permission.VIBRATE"/>
 
@@ -18,15 +19,16 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.SkinHairdresser">
         <activity android:name=".IntroActivity2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
+           </activity>
         <activity android:name=".LanguageActivity" />
         <activity android:name=".ManageActivity" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".IntroActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RecommendActivity" />
