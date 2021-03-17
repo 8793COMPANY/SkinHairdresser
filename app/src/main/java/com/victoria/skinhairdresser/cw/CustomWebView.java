@@ -57,7 +57,7 @@ public class CustomWebView extends WebView {
 
     @Override
     public void draw(Canvas canvas) {
-        Bitmap offscreenBitmap = Bitmap.createBitmap(canvas.getWidth(), canvas.getHeight(), Bitmap.Config.RGB_565);
+        Bitmap offscreenBitmap = Bitmap.createBitmap(canvas.getWidth(), canvas.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas offscreenCanvas = new Canvas(offscreenBitmap);
 
         super.draw(offscreenCanvas);
@@ -71,7 +71,7 @@ public class CustomWebView extends WebView {
     }
 
     private Bitmap createMask(int width, int height) {
-        Bitmap mask = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+        Bitmap mask = Bitmap.createBitmap(width, height, Bitmap.Config.ALPHA_8);
         Canvas canvas = new Canvas(mask);
 
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -82,7 +82,7 @@ public class CustomWebView extends WebView {
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         //canvas.drawRoundRect(new RectF(0, 0, width, height), cornerRadius, cornerRadius, paint);
         canvas.translate(getWidth()/2f,getHeight()/2f);
-        canvas.drawCircle(0,0, getHeight()/3.5f, paint);
+        canvas.drawCircle(0,0, getHeight()/2.4f, paint);
         //canvas.drawCircle(0, 0, height, paint);
 
         return mask;

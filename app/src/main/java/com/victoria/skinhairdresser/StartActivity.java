@@ -1,5 +1,6 @@
 package com.victoria.skinhairdresser;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -8,6 +9,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
@@ -52,6 +55,7 @@ public class StartActivity extends AppCompatActivity {
     ImageButton start_close_btn, start_check_wifi;
     LinearLayout btn_stream, start_20_sec;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,12 +72,12 @@ public class StartActivity extends AppCompatActivity {
 
         // local
         wv = findViewById(R.id.wv);
-        wv.setScaleX(1.5f);
-        wv.setScaleY(1.5f);
+        wv.setForeground(getResources().getDrawable(R.drawable.start_circle));
         progress_circular = findViewById(R.id.progress_circular);
         progress_circular.setMaxValue(second);
         btn_stream = findViewById(R.id.start_stream_btn);
         start_20_sec = findViewById(R.id.start_20_sec);
+        start_20_sec.setEnabled(false);
         start_close_btn = findViewById(R.id.start_close_btn);
         start_check_wifi = findViewById(R.id.start_check_wifi);
         start_tv_1 = findViewById(R.id.start_tv_1);
@@ -91,14 +95,18 @@ public class StartActivity extends AppCompatActivity {
             if(v.isSelected()) {
                 wv.stopLoading();
                 wv.loadUrl("about:blank");
+                wv.setForeground(getResources().getDrawable(R.drawable.start_circle));
                 start_tv_1.setText("스트리밍 대기 중 ···");
                 start_tv_2.setText("스트리밍 시작하기 버튼을 눌러주세요");
                 v.setSelected(false);
+                start_20_sec.setEnabled(false);
             } else {
                 PlayHttpStream(HOST + ":81/stream");
+                wv.setForeground(getResources().getDrawable(android.R.color.transparent));
                 start_tv_1.setText("측정 준비 완료");
                 start_tv_2.setText("측정하기 버튼을 눌러주세요");
                 v.setSelected(true);
+                start_20_sec.setEnabled(true);
             }
         });
 
@@ -111,9 +119,9 @@ public class StartActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     if (prg < second) {
-                        handler.postDelayed(this,1000);
+                        handler.postDelayed(this,100);
 
-                        prg += 1000;
+                        prg += 100;
                         Log.e("progress_circular", "progress: " + prg);
                         progress_circular.setValue(prg);
                     } else {
@@ -122,10 +130,11 @@ public class StartActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                         startActivity(intent);
-                        recreate();
+                        //recreate();
+                        finish();
                     }
                 }
-            },1000);
+            },100);
         });
 
         // wv no touch setting
