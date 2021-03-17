@@ -5,4 +5,10 @@
     <string name="join">註冊會員</string>
     <string name="model_num">輸入型號</string>
     <string name="auto_login">自動登錄</string>
+    <string name="start_text">!</string>
+    <string name="let_out">!</string>
+    <string name="streaming_start">!</string>
+    <string name="measure">!</string>
+    <string name="result_more_text">!</string>
+    <string name="confirm_text">!</string>
 </resources>

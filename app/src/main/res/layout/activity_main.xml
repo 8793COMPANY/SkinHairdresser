@@ -98,7 +98,7 @@
             android:layout_height="match_parent"
             android:layout_weight="580"
             android:background="@drawable/brown_btn_img"
-            android:text="피부 진단 시작하기"
+            android:text="@string/start_text"
             android:textColor="#ffffff"></androidx.appcompat.widget.AppCompatButton>
 
 
@@ -132,7 +132,7 @@
         android:layout_height="match_parent"
         android:layout_weight="580"
         android:background="@drawable/white_btn_img"
-        android:text="화장품 토출하기"
+        android:text="@string/let_out"
         android:textColor="@color/main_brown"></androidx.appcompat.widget.AppCompatButton>
 
 

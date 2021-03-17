@@ -268,7 +268,7 @@
                     android:gravity="center"
                     android:textSize="16dp"
                     style="@style/WHITE_FONT_STYLE"
-                    android:text="스트리밍 시작하기" />
+                    android:text="@string/streaming_start" />
 
             </LinearLayout>
 
@@ -300,7 +300,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="580"
-                android:background="@drawable/start_20_sec">
+                android:background="@drawable/white_btn_img">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -309,7 +309,7 @@
                     android:gravity="center"
                     android:textSize="16dp"
                     style="@style/DEFAULT_FONT_STYLE"
-                    android:text="측정하기" />
+                    android:text="@string/measure" />
 
             </LinearLayout>
 

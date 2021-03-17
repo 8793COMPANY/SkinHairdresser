@@ -29,7 +29,7 @@ public class IntroActivity extends AppCompatActivity {
         public void run() {
             if (count == 300){
                 handler.removeCallbacksAndMessages(null);
-                Intent intent = new Intent(getApplicationContext(), LanguageActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
                 finish();
             }else{

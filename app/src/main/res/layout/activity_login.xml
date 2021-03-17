@@ -43,6 +43,7 @@
                 android:background="@drawable/login_model_num_box"
                 android:gravity="center"
                 android:hint="@string/model_num"
+                android:textColor="@color/main_brown"
                 android:textColorHint="@color/main_brown"></EditText>
 
 
@@ -66,37 +67,49 @@
                 android:layout_weight="20"></LinearLayout>
 
             <LinearLayout
+                android:id="@+id/login_linear"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="26"
+                android:layout_weight="38"
                 android:orientation="horizontal"
                 android:weightSum="580">
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="398"></View>
-
-                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_weight="384"></View>
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="26"
-                    android:background="@drawable/auto_login_btn_off"></androidx.appcompat.widget.AppCompatButton>
+                    android:layout_weight="24"
+                    android:orientation="vertical"
+                    android:weightSum="38"
+                    android:gravity="center"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/auto_login_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="24"
+                        android:background="@drawable/auto_login_btn_off"></androidx.appcompat.widget.AppCompatButton>
+
+                </LinearLayout>
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="10"></View>
+                    android:layout_weight="14"></View>
+
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="146"
                     android:text="@string/auto_login"
-                    android:textSize="13dp"
+                    android:textSize="14dp"
                     android:textStyle="bold"
-                    android:layout_gravity="top"
-                    android:gravity="top"
+                    android:gravity="center_vertical"
                     android:textColor="@color/main_brown"></TextView>
             </LinearLayout>
 

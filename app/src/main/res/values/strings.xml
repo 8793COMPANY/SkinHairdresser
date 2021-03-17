@@ -4,4 +4,10 @@
     <string name="join">회원가입</string>
     <string name="model_num">모델번호 입력</string>
     <string name="auto_login">자동 로그인</string>
+    <string name="start_text">피부 진단 시작하기</string>
+    <string name="let_out">화장품 토출하기</string>
+    <string name="streaming_start">스트리밍 시작하기</string>
+    <string name="measure">측정하기</string>
+    <string name="result_more_text">결과 자세히 보기</string>
+    <string name="confirm_text">앰플 잔량 확인하기</string>
 </resources>

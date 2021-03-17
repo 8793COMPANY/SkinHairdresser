@@ -5,5 +5,11 @@
     <string name="join">sign up</string>
     <string name="model_num">Enter Model Number</string>
     <string name="auto_login">Auto Login</string>
+    <string name="start_text">!</string>
+    <string name="let_out">!</string>
+    <string name="streaming_start">!</string>
+    <string name="measure">!</string>
+    <string name="result_more_text">!</string>
+    <string name="confirm_text">!</string>
 
 </resources>
