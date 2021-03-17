@@ -34,6 +34,7 @@ public class LanguageActivity extends AppCompatActivity {
                 setLanguage(Locale.KOREA);
                 Intent intent = new Intent(LanguageActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
 //                Locale locale = Locale.KOREA;
 //
 //                Locale.setDefault(locale);
@@ -52,6 +53,7 @@ public class LanguageActivity extends AppCompatActivity {
                 setLanguage(Locale.US);
                 Intent intent = new Intent(LanguageActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
 //                Locale locale = Locale.US;
 //
 //                Locale.setDefault(locale);
@@ -70,6 +72,7 @@ public class LanguageActivity extends AppCompatActivity {
                 setLanguage(Locale.CHINA);
                 Intent intent = new Intent(LanguageActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
 //                Locale locale = Locale.CHINA;
 //
 //                Locale.setDefault(locale);
@@ -88,6 +91,7 @@ public class LanguageActivity extends AppCompatActivity {
                 setLanguage(Locale.JAPAN);
                 Intent intent = new Intent(LanguageActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
 //                Locale locale = Locale.JAPAN;
 //
 //                Locale.setDefault(locale);

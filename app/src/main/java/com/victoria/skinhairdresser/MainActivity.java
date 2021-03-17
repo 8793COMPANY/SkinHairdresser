@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,SettingActivity.class);
                 startActivity(intent);
+                //finish();
             }
         });
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,StartActivity.class);
                 startActivity(intent);
+                //finish();
             }
         });
 
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,LetOutActivity.class);
                 startActivity(intent);
+                //finish();
             }
         });
     }
