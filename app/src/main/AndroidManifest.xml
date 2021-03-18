@@ -4,6 +4,10 @@
 
     <!-- 인터넷 권한 -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- BT 권한 -->
     <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
 
@@ -24,22 +28,33 @@
         <activity android:name=".ManageActivity" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".IntroActivity">
+        </activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RecommendActivity" />
+        <activity android:name=".ResultMoreActivity" />
+        <activity android:name=".ResultActivity" >
+        </activity>
+        <activity android:name=".ConfirmActivity" />
+        <activity android:name=".LetOutActivity" />
+        <activity android:name=".StartActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RecommendActivity" />
-        <activity android:name=".ResultMoreActivity" />
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".ConfirmActivity" />
-        <activity android:name=".LetOutActivity" />
-        <activity android:name=".StartActivity" >
+        <activity android:name=".SettingActivity" >
         </activity>
-        <activity android:name=".SettingActivity" />
         <activity android:name=".MainActivity"></activity>
+
+        <receiver
+            android:name=".BroadcastReceiver.WifiReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
