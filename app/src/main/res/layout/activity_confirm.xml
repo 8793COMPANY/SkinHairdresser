@@ -4,9 +4,390 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/confirm_image"
-    tools:context=".ConfirmActivity">
+    android:background="@color/background_brown"
+    android:orientation="vertical"
+    tools:context=".ConfirmActivity"
+    android:weightSum="1280">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="34"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="72"
+        android:orientation="horizontal"
+        android:weightSum="720">
+        
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></View>
+        
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/finish_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="72"
+            android:background="@drawable/finish_btn"></androidx.appcompat.widget.AppCompatButton>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="496"
+            android:text="앰플 잔량 확인"
+            android:textSize="20dp"
+            android:textColor="@color/main_brown"
+            android:gravity="center"></TextView>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="112"></View>
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="34"></LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/main_brown"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="75"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="600"
+        android:orientation="horizontal"
+        android:weightSum="720">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+        <ProgressBar
+            android:id="@+id/aqua_percentage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/vertical_progress"></ProgressBar>
 
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="68"></View>
+
+
+        <ProgressBar
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/progress"></ProgressBar>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="68"></View>
+
+
+        <ProgressBar
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/progress"></ProgressBar>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="68"></View>
+
+
+        <ProgressBar
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/progress"></ProgressBar>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="68"></View>
+
+
+        <ProgressBar
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/progress"></ProgressBar>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="68"></View>
+
+
+        <ProgressBar
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/progress"></ProgressBar>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="44"></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="38"
+        android:orientation="horizontal"
+        android:weightSum="720">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="36"></View>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="Aqua"
+            android:textSize="14dp"
+            android:textColor="@color/main_brown"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="Green"
+            android:textSize="14dp"
+            android:textColor="@color/main_brown"></TextView>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="Zero"
+            android:textSize="14dp"
+            android:textColor="@color/main_brown"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="Red"
+            android:textSize="14dp"
+            android:textColor="@color/main_brown"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="Blue"
+            android:textSize="14dp"
+            android:textColor="@color/main_brown"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="Black"
+            android:textSize="14dp"
+            android:textColor="@color/main_brown"></TextView>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="36"></View>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="38"
+        android:orientation="horizontal"
+        android:weightSum="720">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="36"></View>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="80%"
+            android:textColor="@color/main_brown"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="50%"
+            android:textColor="@color/main_brown"></TextView>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="80%"
+            android:textColor="@color/main_brown"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="40%"
+            android:textColor="@color/main_brown"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="100%"
+            android:textColor="@color/main_brown"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:gravity="center"
+            android:text="80%"
+            android:textColor="@color/main_brown"></TextView>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="36"></View>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="74"></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:orientation="horizontal"
+        android:weightSum="720">
+        
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="580"
+            android:background="@drawable/brown_btn_img"
+            android:text="앰플 주문하기"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            ></androidx.appcompat.widget.AppCompatButton>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:orientation="horizontal"
+        android:weightSum="720">
+        
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+        
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="580"
+            android:background="@drawable/white_btn_img"
+            android:text="피부 진단 시작하기"
+            android:textStyle="bold"
+            android:textColor="@color/main_brown"></androidx.appcompat.widget.AppCompatButton>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50"></LinearLayout>
 
 </LinearLayout>

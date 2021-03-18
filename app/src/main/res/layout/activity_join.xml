@@ -4,8 +4,380 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/join_image"
+    android:background="@color/background_brown"
+    android:orientation="vertical"
+    android:weightSum="1280"
     tools:context=".JoinActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="152"></LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="45"
+        android:text="회원가입"
+        android:gravity="center"
+        android:textColor="#6f4936"
+        android:textSize="15dp"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="16"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="150">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="720"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/user_image"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="150"
+                    android:background="@drawable/join_user_img"></ImageView>
+
+            </LinearLayout>
+
+
+           <LinearLayout
+               android:id="@+id/camera_linear"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:weightSum="720"
+               android:orientation="horizontal"
+               android:layout_alignParentBottom="true">
+
+               <View
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="395"></View>
+
+               <androidx.appcompat.widget.AppCompatButton
+                   android:id="@+id/camera_btn"
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="70"
+                   android:background="@drawable/camera_icon"></androidx.appcompat.widget.AppCompatButton>
+
+
+               <View
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="255"></View>
+
+           </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="130"></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="638"
+        android:orientation="horizontal"
+        android:weightSum="720">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="580"
+          android:orientation="vertical"
+          android:weightSum="638">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="80"
+              android:background="@drawable/login_model_num_box"
+              android:orientation="horizontal"
+              android:weightSum="580">
+
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="48"></View>
+
+              <EditText
+                  android:id="@+id/name_input"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="332"
+                  android:background="@color/transparent"
+                  android:hint="이름"
+                  android:textColor="@color/main_brown"
+                  android:textSize="16dp"
+                  ></EditText>
+
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="1"
+                  android:background="#fbf0e2"
+                  ></View>
+
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="48"
+                  ></View>
+
+              <EditText
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="152"
+                  android:hint="성"
+                  android:textColor="@color/main_brown"
+                  android:textSize="16dp"
+                  android:background="@color/transparent"></EditText>
+
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="28"></LinearLayout>
+
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="80"
+              android:weightSum="580"
+              android:background="@drawable/login_model_num_box">
+
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="48"></View>
+
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="332"
+                  android:orientation="vertical"
+                  android:weightSum="80">
+
+                  <View
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="16"></View>
+
+                  <EditText
+                      android:id="@+id/birth_input"
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="48"
+                      android:background="@color/transparent"
+                      android:textSize="16dp"
+                      android:hint="생년월일"></EditText>
+
+
+                  <View
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="16"></View>
+
+
+              </LinearLayout>
+
+
+
+
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="1"
+                  android:background="#fbf0e2"
+                  ></View>
+
+              <androidx.appcompat.widget.AppCompatButton
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="100"
+                  android:text="남"
+                  android:textColor="@color/main_brown"
+                  android:background="@color/transparent"></androidx.appcompat.widget.AppCompatButton>
+
+
+
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="1"
+                  android:background="#fbf0e2"
+                  ></View>
+
+              <androidx.appcompat.widget.AppCompatButton
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="100"
+                  android:text="여"
+                  android:textColor="@color/main_brown"
+                  android:background="@color/transparent"></androidx.appcompat.widget.AppCompatButton>
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="28"></LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="80"
+              android:background="@drawable/login_model_num_box"
+              android:orientation="horizontal"
+              android:weightSum="580">
+
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="48"></View>
+
+              <EditText
+                  android:id="@+id/address_input"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="532"
+                  android:background="@color/transparent"
+                  android:textColor="@color/main_brown"
+                  android:textSize="16dp"
+                  android:hint="주소"></EditText>
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="28"></LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="80"
+              android:background="@drawable/login_model_num_box">
+
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="48"></View>
+
+              <EditText
+                  android:id="@+id/address_detail_input"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="532"
+                  android:background="@color/transparent"
+                  android:textColor="@color/main_brown"
+                  android:textSize="16dp"
+                  android:hint="상세주소"></EditText>
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="28"></LinearLayout>
+
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="80"
+              android:background="@drawable/login_model_num_box">
+
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="48"></View>
+
+              <EditText
+                  android:id="@+id/model_num_input"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="332"
+                  android:background="@color/transparent"
+                  android:textColor="@color/main_brown"
+                  android:textSize="16dp"
+                  android:hint="모델번호 입력"></EditText>
+
+              <androidx.appcompat.widget.AppCompatButton
+                  android:id="@+id/confirm_btn"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="200"
+                  android:text="확인"
+                  android:textColor="@color/white"
+                  android:background="@drawable/confirm_btn_img"></androidx.appcompat.widget.AppCompatButton>
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="28"></LinearLayout>
+
+
+          <androidx.appcompat.widget.AppCompatButton
+              android:id="@+id/join_btn"
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="100"
+              android:text="가입하기"
+              android:textColor="@color/main_brown"
+              android:background="@drawable/join_btn_img">
+          </androidx.appcompat.widget.AppCompatButton>
+
+
+      </LinearLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"></View>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="146"></LinearLayout>
 
 </LinearLayout>
