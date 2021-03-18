@@ -150,7 +150,7 @@
                     android:layout_height="match_parent"
                     android:textAlignment="center"
                     android:gravity="center"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     style="@style/DEFAULT_FONT_STYLE"
                     android:text="피부 진단 시작하기" />
 
@@ -164,7 +164,7 @@
                     android:layout_weight="52"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/start_check_wifi" />
+                    android:background="@drawable/start_check_wifi_off" />
 
                 <View
                     android:layout_weight="48"
@@ -204,7 +204,7 @@
                 android:layout_height="0dp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 style="@style/DEFAULT_FONT_STYLE"
                 android:text="스트리밍 대기 중 ···" />
 
@@ -222,7 +222,7 @@
                 android:layout_height="0dp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 style="@style/DEFAULT_FONT_STYLE"
                 android:text="스트리밍 시작하기 버튼을 눌러주세요" />
 
