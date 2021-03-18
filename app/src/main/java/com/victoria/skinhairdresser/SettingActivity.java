@@ -9,7 +9,6 @@ import android.widget.Button;
 
 public class SettingActivity extends AppCompatActivity {
     //내 정보 화면
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

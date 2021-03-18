@@ -34,7 +34,7 @@
             android:layout_height="match_parent"
             android:layout_weight="234"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressDrawable="@drawable/progress"></ProgressBar>
+            android:progressDrawable="@drawable/loading_progress"></ProgressBar>
 
 
         <View

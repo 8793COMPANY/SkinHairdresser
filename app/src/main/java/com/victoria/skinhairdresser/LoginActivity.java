@@ -3,6 +3,7 @@ package com.victoria.skinhairdresser;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.storage.OnObbStateChangeListener;
@@ -44,6 +45,15 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                 }
 
+            }
+        });
+
+
+        join_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
+                startActivity(intent);
             }
         });
 
