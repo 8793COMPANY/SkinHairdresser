@@ -1,24 +1,67 @@
 package com.victoria.skinhairdresser;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
+import android.net.NetworkRequest;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiManager;
+import android.net.wifi.WifiNetworkSpecifier;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.victoria.skinhairdresser.BroadcastReceiver.WifiReceiver;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.ACCESS_WIFI_STATE;
+import static android.Manifest.permission.CHANGE_WIFI_STATE;
+import static android.Manifest.permission.INTERNET;
+
 public class SettingActivity extends AppCompatActivity {
     // 내 정보 화면
     // 글로벌
+    private final int PERMISSIONS_REQUEST_RESULT = 1;
+
     AppCompatButton back_btn;
     LinearLayout setting_edit_info;
     View setting_go_start, setting_go_manage;
     Switch setting_letOut, setting_start, setting_login;
 
+    // WIFI settings
+    WifiReceiver wifiReceiver = new WifiReceiver();
+    String networkSSID = "ESP32-Access-Point";
+    String networkPass = "123456789";
+    // WIFI over O versions
+    NetworkRequest networkRequest = null;
+    ConnectivityManager.NetworkCallback networkCallback;
+    // WIFI under O versions
+    WifiManager wifiManager;
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +76,41 @@ public class SettingActivity extends AppCompatActivity {
         setting_start = findViewById(R.id.setting_start);
         setting_login = findViewById(R.id.setting_login);
 
+        // permissions
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, ACCESS_COARSE_LOCATION)) {
+                //권한을 거절하면 재 요청을 하는 함수
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{CHANGE_WIFI_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION}, PERMISSIONS_REQUEST_RESULT);
+            }
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            networkCallback = new ConnectivityManager.NetworkCallback() {
+                @Override public void onAvailable(@NonNull Network network) {
+                    Log.d("넷 콜백", "onAvailable");
+                } @Override public void onUnavailable() {
+                    Log.d("넷 콜백", "onUnavailable"); }
+            };
+
+            WifiNetworkSpecifier wifiNetworkSpecifier = new WifiNetworkSpecifier.Builder()
+                    .setSsid(networkSSID)
+                    .setWpa2Passphrase(networkPass)
+                    .build();
+
+            networkRequest = new NetworkRequest.Builder()
+                    .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
+                    .setNetworkSpecifier(wifiNetworkSpecifier) .build();
+        }
+
+        // Wifi check receiver
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+        registerReceiver(wifiReceiver, filter);
+        wifiManager = (WifiManager)getApplicationContext().getSystemService(WIFI_SERVICE);
+        // 와이파이 대기 중
+        wifiManager.setWifiEnabled(true);
 
         // 스위치 제어
         setting_letOut.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -48,10 +126,30 @@ public class SettingActivity extends AppCompatActivity {
         setting_start.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 // ON
-                Toast.makeText(this, "측정기 ON", Toast.LENGTH_SHORT).show();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    NetworkRequest NetworkRequest = networkRequest;
+
+                    ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+                    connectivityManager.requestNetwork(NetworkRequest, networkCallback);
+                } else {
+                    WifiConfiguration wifiConfig = new WifiConfiguration();
+                    wifiConfig.SSID = String.format("\"%s\"", networkSSID);
+                    wifiConfig.preSharedKey = String.format("\"%s\"", networkPass);
+                    wifiConfig.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
+
+                    int netId = wifiManager.addNetwork(wifiConfig);
+                    wifiManager.disconnect();
+                    wifiManager.enableNetwork(netId, true);
+                    wifiManager.reconnect();
+                }
             } else {
                 // OFF
-                Toast.makeText(this, "측정기 OFF", Toast.LENGTH_SHORT).show();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+                    connectivityManager.unregisterNetworkCallback(networkCallback);
+                } else {
+
+                }
             }
         });
 
