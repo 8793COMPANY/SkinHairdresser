@@ -22,7 +22,7 @@ import static java.security.AccessController.getContext;
 
 public class ManageActivity extends AppCompatActivity {
     //고객 진단 관리 화면
-    private LineChart chart;
+    private LineChart chart, chart2, chart3, chart4, chart5, chart6;
     float average = 0;
 
     @Override
@@ -32,10 +32,28 @@ public class ManageActivity extends AppCompatActivity {
 
 
         chart = findViewById(R.id.lineChart);
+        chart2 = findViewById(R.id.lineChart2);
+        chart3 = findViewById(R.id.lineChart3);
+        chart4 = findViewById(R.id.lineChart4);
+        chart5 = findViewById(R.id.lineChart5);
+        chart6 = findViewById(R.id.lineChart6);
+
+
+        settingChart(chart);
+        settingChart(chart2);
+        settingChart(chart3);
+        settingChart(chart4);
+        settingChart(chart5);
+        settingChart(chart6);
+
+    }
+
+
+    void settingChart(LineChart chart){
         chart.getDescription().setEnabled(false);
-        chart.invalidate();
         chart.setTouchEnabled(false);
         chart.setPinchZoom(false);
+        chart.setBackgroundColor(Color.WHITE);
 
         Legend l = chart.getLegend();
         l.setEnabled(false);
@@ -78,14 +96,8 @@ public class ManageActivity extends AppCompatActivity {
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(set1); // add the data sets
 
-        // create a data object with the data sets
+
         LineData data = new LineData(dataSets);
-
-        // black lines and points
-
-//        chart.setBackgroundResource(R.drawable.graph_background);
-        chart.setBackgroundColor(Color.WHITE);
-
 
         set1.setDrawFilled(false);
         set1.setDrawValues(false);
@@ -94,14 +106,6 @@ public class ManageActivity extends AppCompatActivity {
         set1.setColor(ContextCompat.getColor(this, R.color.main_brown));
         set1.setFillColor(R.color.main_brown);
 
-
-
-        // set data
         chart.setData(data);
-
-
-
-
-
     }
 }
