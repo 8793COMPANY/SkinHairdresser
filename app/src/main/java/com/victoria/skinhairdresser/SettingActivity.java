@@ -1,6 +1,7 @@
 package com.victoria.skinhairdresser;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -23,6 +24,8 @@ import android.net.wifi.WifiManager;
 import android.net.wifi.WifiNetworkSpecifier;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +41,7 @@ import java.util.List;
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.ACCESS_WIFI_STATE;
+import static android.Manifest.permission.CHANGE_NETWORK_STATE;
 import static android.Manifest.permission.CHANGE_WIFI_STATE;
 import static android.Manifest.permission.INTERNET;
 
@@ -55,6 +59,8 @@ public class SettingActivity extends AppCompatActivity {
     WifiReceiver wifiReceiver = new WifiReceiver();
     String networkSSID = "ESP32-Access-Point";
     String networkPass = "123456789";
+    int netId = 0;
+    Boolean check_flag = false;
     // WIFI over O versions
     NetworkRequest networkRequest = null;
     ConnectivityManager.NetworkCallback networkCallback;
@@ -81,16 +87,22 @@ public class SettingActivity extends AppCompatActivity {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, ACCESS_COARSE_LOCATION)) {
                 //권한을 거절하면 재 요청을 하는 함수
             } else {
-                ActivityCompat.requestPermissions(this, new String[]{CHANGE_WIFI_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION}, PERMISSIONS_REQUEST_RESULT);
+                ActivityCompat.requestPermissions(this, new String[]{CHANGE_WIFI_STATE, CHANGE_NETWORK_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION}, PERMISSIONS_REQUEST_RESULT);
             }
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             networkCallback = new ConnectivityManager.NetworkCallback() {
-                @Override public void onAvailable(@NonNull Network network) {
+                @Override
+                public void onAvailable(@NonNull Network network) {
                     Log.d("넷 콜백", "onAvailable");
-                } @Override public void onUnavailable() {
-                    Log.d("넷 콜백", "onUnavailable"); }
+                }
+
+                @Override
+                public void onUnavailable() {
+                    Toast.makeText(SettingActivity.this, "연결이 취소되었습니다", Toast.LENGTH_SHORT).show();
+                    setting_start.setChecked(false);
+                }
             };
 
             WifiNetworkSpecifier wifiNetworkSpecifier = new WifiNetworkSpecifier.Builder()
@@ -100,7 +112,8 @@ public class SettingActivity extends AppCompatActivity {
 
             networkRequest = new NetworkRequest.Builder()
                     .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
-                    .setNetworkSpecifier(wifiNetworkSpecifier) .build();
+                    .setNetworkSpecifier(wifiNetworkSpecifier)
+                    .build();
         }
 
         // Wifi check receiver
@@ -109,7 +122,9 @@ public class SettingActivity extends AppCompatActivity {
         filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
         registerReceiver(wifiReceiver, filter);
         wifiManager = (WifiManager)getApplicationContext().getSystemService(WIFI_SERVICE);
-        // 와이파이 대기 중
+
+        Handler handler_main = new Handler();
+
         wifiManager.setWifiEnabled(true);
 
         // 스위치 제어
@@ -126,10 +141,17 @@ public class SettingActivity extends AppCompatActivity {
         setting_start.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 // ON
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    NetworkRequest NetworkRequest = networkRequest;
+                check_flag = true;
 
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    if (!wifiManager.isWifiEnabled()) {
+                        Intent panelIntent = new Intent(Settings.Panel.ACTION_WIFI);
+                        startActivityForResult(panelIntent, 1);
+                    }
+
+                    NetworkRequest NetworkRequest = networkRequest;
                     ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
                     connectivityManager.requestNetwork(NetworkRequest, networkCallback);
                 } else {
                     WifiConfiguration wifiConfig = new WifiConfiguration();
@@ -137,18 +159,48 @@ public class SettingActivity extends AppCompatActivity {
                     wifiConfig.preSharedKey = String.format("\"%s\"", networkPass);
                     wifiConfig.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
 
-                    int netId = wifiManager.addNetwork(wifiConfig);
+                    netId = wifiManager.addNetwork(wifiConfig);
                     wifiManager.disconnect();
-                    wifiManager.enableNetwork(netId, true);
+
+                    if (wifiManager.enableNetwork(netId, true)) {
+                        handler_main.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (check_flag) {
+                                    handler_main.postDelayed(this,2000);
+
+                                    if (wifiReceiver.getWifiConnection()) {
+                                        Toast.makeText(SettingActivity.this, "측정기가 연결되었습니다", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(SettingActivity.this, "측정기 상태를 확인해주세요.", Toast.LENGTH_SHORT).show();
+                                    }
+                                    check_flag = !check_flag;
+                                }
+                            }
+                        },2000);
+                    }
+
                     wifiManager.reconnect();
                 }
             } else {
                 // OFF
+                check_flag = false;
+
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    Boolean one_toast = wifiReceiver.getWifiConnection();
                     ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
                     connectivityManager.unregisterNetworkCallback(networkCallback);
-                } else {
 
+                    if (one_toast) {
+                        Toast.makeText(this, "측정기 연결이 해제되었습니다", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(this, "측정기 연결이 해제되었습니다", Toast.LENGTH_SHORT).show();
+
+                    wifiManager.disconnect();
+                    wifiManager.disableNetwork(netId);
+                    wifiManager.removeNetwork(netId);
+                    wifiManager.reconnect();
                 }
             }
         });
@@ -186,5 +238,22 @@ public class SettingActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (!wifiManager.isWifiEnabled()) {
+            setting_start.setChecked(false);
+        } else {
+            Log.e("잉잉", "" + wifiManager.getConnectionInfo().getSSID() + " : " + networkSSID);
+            if(!wifiManager.getConnectionInfo().getSSID().equals("\"" + networkSSID + "\"")) {
+                Toast.makeText(SettingActivity.this, "측정기와 연결해주세요", Toast.LENGTH_SHORT).show();
+                setting_start.setChecked(false);
+            } else {
+                Toast.makeText(SettingActivity.this, "측정기가 연결되었습니다", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
