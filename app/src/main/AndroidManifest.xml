@@ -33,7 +33,13 @@
         <activity android:name=".JoinActivity" />
         <activity android:name=".IntroActivity">
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".RecommendActivity" />
         <activity android:name=".ResultMoreActivity" />
         <activity android:name=".ResultActivity" >
@@ -41,9 +47,11 @@
         <activity android:name=".ConfirmActivity" />
         <activity android:name=".LetOutActivity" />
         <activity android:name=".StartActivity" >
+
         </activity>
         <activity android:name=".SettingActivity" >
         </activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -91,21 +91,23 @@
             android:layout_weight="49"></LinearLayout>
 
         <TextView
+            android:id="@+id/main_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="49"
-            android:text="화장품 토출 중..."
+            android:text="블루투스 연결 전"
             android:gravity="center"
             android:textColor="@color/main_brown"
             android:textSize="20dp"></TextView>
 
         <TextView
+            android:id="@+id/detail_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="46"
             android:gravity="center"
             android:textColor="@color/main_brown"
-            android:text="토출이 완료될 때까지 손을 빼지 마세요"></TextView>
+            android:text="토출을 원하시면 먼저 블루투스를 연결해주세요"></TextView>
 
 
         <LinearLayout

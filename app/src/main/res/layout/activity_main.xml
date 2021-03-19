@@ -45,7 +45,8 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="480"></View>
+                android:layout_weight="480">
+            </View>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/setting_btn"

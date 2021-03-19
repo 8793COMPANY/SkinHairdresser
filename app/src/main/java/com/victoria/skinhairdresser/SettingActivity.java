@@ -46,6 +46,8 @@ import static android.Manifest.permission.CHANGE_WIFI_STATE;
 import static android.Manifest.permission.INTERNET;
 
 public class SettingActivity extends AppCompatActivity {
+
+    //내 정보 화면
     // 내 정보 화면
     // 글로벌
     private final int PERMISSIONS_REQUEST_RESULT = 1;
