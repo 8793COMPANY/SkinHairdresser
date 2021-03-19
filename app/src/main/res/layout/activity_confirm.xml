@@ -333,6 +333,7 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/order_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="580"
@@ -368,6 +369,7 @@
             android:layout_weight="70"></View>
         
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/start_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="580"

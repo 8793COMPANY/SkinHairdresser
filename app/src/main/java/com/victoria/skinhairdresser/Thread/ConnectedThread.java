@@ -73,16 +73,42 @@ public class ConnectedThread extends Thread {
                     Log.i("From Machine P : ", incomingMessage);
 
                     if (incomingMessage.length() > 2) {
+
                         switch (incomingMessage.substring(0, 3)) {
                             case "PMA" :
                                 Log.i("From Machine P : ", incomingMessage.substring(0, 3) + " Enable");
                                 PMA = true;
                                 break;
 
+
                             case "SOK" :
                                 Log.i("From Machine P : ", incomingMessage.substring(0, 3) + " Enable");
                                 SOK = true;
                                 this.write("OK");
+                                Log.e("돈다","Sok");
+                                break;
+
+                        }
+                    }else if (incomingMessage.length() > 1){
+                        switch (incomingMessage.substring(0, 2)) {
+
+                            case "OK" :
+                                Log.i("From Machine P : ", incomingMessage.substring(0, 2) + " Enable");
+                                SOK = true;
+                                this.write("OK");
+                                Log.e("돈다","ok");
+                                break;
+
+
+                        }
+                    }else{
+                        switch (incomingMessage.substring(0, 1)) {
+
+                            case "S" :
+                                Log.i("From Machine P : ", incomingMessage.substring(0, 1) + " Enable");
+                                SOK = true;
+                                this.write("OK");
+                                Log.e("돈다","s");
                                 break;
                         }
                     }

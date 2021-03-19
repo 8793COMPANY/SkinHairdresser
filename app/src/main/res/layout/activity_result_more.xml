@@ -120,11 +120,13 @@
 
 
             <ProgressBar
+                android:id="@+id/oil_progress"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="40"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"></ProgressBar>
+                android:progressDrawable="@drawable/progress"
+                android:max="100"></ProgressBar>
 
             <View
                 android:layout_width="match_parent"
@@ -166,11 +168,13 @@
 
 
             <ProgressBar
+                android:id="@+id/moisture_progress"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="40"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"></ProgressBar>
+                android:progressDrawable="@drawable/progress"
+                android:max="100"></ProgressBar>
 
 
             <View
@@ -212,11 +216,13 @@
 
 
             <ProgressBar
+                android:id="@+id/sebum_secretion_progress"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="40"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"></ProgressBar>
+                android:progressDrawable="@drawable/progress"
+                android:max="100"></ProgressBar>
 
 
             <View
@@ -259,11 +265,13 @@
 
 
             <ProgressBar
+                android:id="@+id/wrinkle_progress"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="40"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"></ProgressBar>
+                android:progressDrawable="@drawable/progress"
+                android:max="100"></ProgressBar>
 
 
             <View
@@ -306,11 +314,13 @@
 
 
             <ProgressBar
+                android:id="@+id/pore_progress"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="40"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"></ProgressBar>
+                android:progressDrawable="@drawable/progress"
+                android:max="100"></ProgressBar>
 
 
             <View
@@ -353,11 +363,13 @@
 
 
             <ProgressBar
+                android:id="@+id/sensitivity_progress"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="40"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"></ProgressBar>
+                android:progressDrawable="@drawable/progress"
+                android:max="100"></ProgressBar>
 
 
             <View
@@ -401,11 +413,13 @@
 
 
             <ProgressBar
+                android:id="@+id/skin_tone_progress"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="40"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"></ProgressBar>
+                android:progressDrawable="@drawable/progress"
+                android:max="100"></ProgressBar>
 
 
             <View
@@ -448,11 +462,13 @@
 
 
             <ProgressBar
+                android:id="@+id/pigmentation_progress"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="40"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"></ProgressBar>
+                android:progressDrawable="@drawable/progress"
+                android:max="100"></ProgressBar>
         </LinearLayout>
 
 
@@ -486,6 +502,7 @@
             android:layout_weight="70"></View>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/recommend_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="580"

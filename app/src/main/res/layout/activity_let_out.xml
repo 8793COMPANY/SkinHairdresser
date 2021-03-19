@@ -55,7 +55,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="72"
-                android:background="@drawable/bluetooth_btn"></androidx.appcompat.widget.AppCompatButton>
+                android:background="@drawable/bluetooth_btn_off"></androidx.appcompat.widget.AppCompatButton>
 
             <View
                 android:layout_width="0dp"
@@ -164,7 +164,8 @@
             android:layout_height="match_parent"
             android:layout_weight="580"
             android:text="화장품 토출하기"
-            android:textColor="@color/white"></androidx.appcompat.widget.AppCompatButton>
+            android:textColor="@color/white"
+            android:enabled="false"></androidx.appcompat.widget.AppCompatButton>
 
 
         <View

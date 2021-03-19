@@ -11,6 +11,7 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -46,6 +47,7 @@ public class LetOutActivity extends AppCompatActivity {
     ListView pair_lv;
 
     TextView main_text, detail_text;
+    boolean check = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,19 +87,25 @@ public class LetOutActivity extends AppCompatActivity {
         let_out_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                main_text.setText("화장품 토출중 ...");
-                detail_text.setText("토출이 완료될 때까지 손을 빼지 마세요");
-                if(connectedThread != null) {
-                    POOP_VALUE += "A" + "0" + " / ";
-                    POOP_VALUE += "B" + "0"  + " / ";
-                    POOP_VALUE += "C" + "0"  + " / ";
-                    POOP_VALUE += "D" + "0"  + " / ";
-                    POOP_VALUE += "E" + "0"  + " / ";
-                    POOP_VALUE += "F" + "0" ;
-                    connectedThread.write(POOP_VALUE);
-
+                Log.e("ssss","!");
+                if (check){
+                    main_text.setText("화장품 토출중 ...");
+                    detail_text.setText("토출이 완료될 때까지 손을 빼지 마세요");
                 }
-                Toast.makeText(getApplicationContext(),"토출하기",Toast.LENGTH_SHORT).show();
+
+
+                if(connectedThread != null) {
+                    POOP_VALUE += "A" + "1" + " / ";
+                    POOP_VALUE += "B" + "1"  + " / ";
+                    POOP_VALUE += "C" + "1"  + " / ";
+                    POOP_VALUE += "D" + "1"  + " / ";
+                    POOP_VALUE += "E" + "1"  + " / ";
+                    POOP_VALUE += "F" + "1" ;
+                    connectedThread.write(POOP_VALUE);
+                    Log.e("poop",POOP_VALUE);
+                    POOP_VALUE = "";
+                }
+//                Toast.makeText(getApplicationContext(),"토출하기",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -126,22 +134,29 @@ public class LetOutActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+//                Log.e("btAdapter",btAdapter.getState()+"");
                 if (true) {
                     if (connectedThread != null) {
                         if (connectedThread.getPMA()) {
                             new Handler().postDelayed(() -> {
                                 //딜레이 후 시작할 코드 작성
-//                                if(!btn_poop.isEnabled()) {
-                                    Toast.makeText(LetOutActivity.this, "토출이 준비되었습니다", Toast.LENGTH_SHORT).show();
+
+                                Log.e("토출","준비");
+                                    main_text.setText("토출이 준비되었습니다");
+                                    detail_text.setText("토출하기 버튼을 다시 눌러주세요");
+//                                    Toast.makeText(LetOutActivity.this, "토출이 준비되었습니다", Toast.LENGTH_SHORT).show();
 //                                    tv_status.setText("토출이 준비되었습니다" + "\n토출값을 입력하고 \'토출하기\' 버튼을 눌러주세요.");
 //                                    btn_poop.setEnabled(true);
-//                                }
+
                             }, 6000);
                             connectedThread.setPMA(false);
                         } else if (connectedThread.getSOK()) {
                             new Handler().postDelayed(() -> {
                                 //딜레이 후 시작할 코드 작성
-                                Toast.makeText(LetOutActivity.this, "토출이 완료되었습니다", Toast.LENGTH_SHORT).show();
+                                Log.e("토출","완료");
+                                main_text.setText("토출이 완료되었습니다");
+                                detail_text.setText("");
+//                                Toast.makeText(LetOutActivity.this, "토출이 완료되었습니다", Toast.LENGTH_SHORT).show();
 //                                tv_status.setText("토출이 완료되었습니다" + "\n토출값 : " + POOP_VALUE);
                                 POOP_VALUE = "";
                             }, 1000);
@@ -222,9 +237,10 @@ public class LetOutActivity extends AppCompatActivity {
                     new Handler().postDelayed(() -> {
                         //딜레이 후 시작할 코드 작성
                         Toast.makeText(getApplicationContext(), "connected to " + name, Toast.LENGTH_SHORT).show();
-                        main_text.setText("블루투스 연결 성공 !");
-                        detail_text.setText("토출을 원하시면 화장품 토출하기 버튼을 눌러주세요");
-//                        tv_status.setText("토출기와 연결하는데 성공했습니다" + "\n토출기 : " + name);
+                        let_out_btn.setEnabled(true);
+                        bluetooth_btn.setBackgroundResource(R.drawable.bluetooth_btn);
+
+                        main_text.setText("토출기와 연결하는데 성공했습니다" + "\n토출기 : " + name);
 //                        dialog.cancel();
                     }, 2000);
                 }
