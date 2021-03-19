@@ -31,6 +31,10 @@ import com.victoria.skinhairdresser.BroadcastReceiver.WifiReceiver;
 import com.victoria.skinhairdresser.cw.CustomWebView;
 
 
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,6 +54,8 @@ public class StartActivity extends AppCompatActivity {
     private final int PERMISSIONS_REQUEST_RESULT = 1;
 
     WifiReceiver wifiReceiver = new WifiReceiver();
+    String networkSSID = "ESP32-Access-Point";
+    WifiManager wifiManager;
 
     // cw
     CustomWebView wv;
@@ -84,6 +90,7 @@ public class StartActivity extends AppCompatActivity {
         filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
         filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
         registerReceiver(wifiReceiver, filter);
+        wifiManager = (WifiManager)getApplicationContext().getSystemService(WIFI_SERVICE);
 
         // local
         wv = findViewById(R.id.wv);
@@ -100,6 +107,7 @@ public class StartActivity extends AppCompatActivity {
 
         final Handler handler_main = new Handler();
         final Handler handler = new Handler();
+        final Handler handler2 = new Handler();
         final Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         // Wifi check receiver
@@ -110,7 +118,7 @@ public class StartActivity extends AppCompatActivity {
                     handler_main.postDelayed(this,1000);
 
                     runOnUiThread(() -> {
-                        if (wifiReceiver.getWifiConnection()) {
+                        if (wifiManager.getConnectionInfo().getSSID().equals("\"" + networkSSID + "\"")) {
                             start_check_wifi.setBackground(getResources().getDrawable(R.drawable.start_check_wifi_on));
                         } else {
                             start_check_wifi.setBackground(getResources().getDrawable(R.drawable.start_check_wifi_off));
@@ -138,7 +146,7 @@ public class StartActivity extends AppCompatActivity {
                 v.setSelected(false);
                 start_20_sec.setEnabled(false);
             } else {
-                if (!wifiReceiver.getWifiConnection()) {
+                if (!wifiManager.getConnectionInfo().getSSID().equals("\"" + networkSSID + "\"")) {
                     Toast.makeText(this, "측정기 연결을 확인해주세요", Toast.LENGTH_SHORT).show();
                     vibrator.vibrate(100);
 
@@ -148,7 +156,20 @@ public class StartActivity extends AppCompatActivity {
                     start_tv_1.setText("스트리밍 대기 중 ···");
                     start_tv_2.setText("스트리밍 시작하기 버튼을 눌러주세요");
                 } else {
-                    PlayHttpStream(HOST + ":81/stream");
+                    //
+                    PlayHttpStream(HOST + "/hmirror");
+                    //wv.stopLoading();
+                    //wv.loadUrl("about:blank");
+
+                    handler2.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (true) {
+                                PlayHttpStream(HOST + ":81/stream");
+                            }
+                        }
+                    },1000);
+                    //
                     wv.setForeground(getResources().getDrawable(android.R.color.transparent));
                     start_tv_1.setText("측정 준비 완료");
                     start_tv_2.setText("측정하기 버튼을 눌러주세요");
@@ -159,7 +180,7 @@ public class StartActivity extends AppCompatActivity {
         });
 
         start_20_sec.setOnClickListener(v -> {
-            if (!wifiReceiver.getWifiConnection()) {
+            if (!wifiManager.getConnectionInfo().getSSID().equals("\"" + networkSSID + "\"")) {
                 Toast.makeText(this, "측정기 연결을 확인해주세요", Toast.LENGTH_SHORT).show();
                 vibrator.vibrate(100);
 
@@ -180,10 +201,11 @@ public class StartActivity extends AppCompatActivity {
                             handler.postDelayed(this,100);
 
                             prg += 100;
+
                             Log.e("progress_circular", "progress: " + prg);
                             progress_circular.setValue(prg);
                         } else {
-                            if (!wifiReceiver.getWifiConnection()) {
+                            if (!wifiManager.getConnectionInfo().getSSID().equals("\"" + networkSSID + "\"")) {
                                 Toast.makeText(StartActivity.this, "측정기 연결을 확인해주세요", Toast.LENGTH_SHORT).show();
                                 vibrator.vibrate(100);
                                 progress_circular.setValue(0);
@@ -197,6 +219,8 @@ public class StartActivity extends AppCompatActivity {
                                 start_20_sec.setEnabled(true);
                                 btn_stream.setEnabled(true);
                             } else {
+                                wv.stopLoading();
+                                PlayHttpStream(HOST + "/hmirror");
                                 vibrator.vibrate(100);
                                 Toast.makeText(StartActivity.this, "측정이 완료되었습니다", Toast.LENGTH_LONG).show();
 

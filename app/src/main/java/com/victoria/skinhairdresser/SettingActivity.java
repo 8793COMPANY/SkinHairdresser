@@ -22,6 +22,7 @@ import android.net.NetworkRequest;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiNetworkSpecifier;
+import android.net.wifi.WifiNetworkSuggestion;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,6 +36,7 @@ import android.widget.Toast;
 
 import com.victoria.skinhairdresser.BroadcastReceiver.WifiReceiver;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -63,6 +65,7 @@ public class SettingActivity extends AppCompatActivity {
     String networkPass = "123456789";
     int netId = 0;
     Boolean check_flag = false;
+    List<WifiNetworkSuggestion> suggestionsList;
     // WIFI over O versions
     NetworkRequest networkRequest = null;
     ConnectivityManager.NetworkCallback networkCallback;
@@ -112,6 +115,14 @@ public class SettingActivity extends AppCompatActivity {
                     .setWpa2Passphrase(networkPass)
                     .build();
 
+            WifiNetworkSuggestion wifiNetworkSuggestion = new WifiNetworkSuggestion.Builder()
+                    .setSsid(networkSSID)
+                    .setWpa2Passphrase(networkPass)
+                    .build();
+
+            suggestionsList = new ArrayList<WifiNetworkSuggestion>();
+            suggestionsList.add(wifiNetworkSuggestion);
+
             networkRequest = new NetworkRequest.Builder()
                     .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
                     .setNetworkSpecifier(wifiNetworkSpecifier)
@@ -151,10 +162,16 @@ public class SettingActivity extends AppCompatActivity {
                         startActivityForResult(panelIntent, 1);
                     }
 
+                    int status = wifiManager.addNetworkSuggestions(suggestionsList);
+                    if (status != WifiManager.STATUS_NETWORK_SUGGESTIONS_SUCCESS) {
+                    // do error handling here…
+
+                    }
+/*
                     NetworkRequest NetworkRequest = networkRequest;
                     ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
-                    connectivityManager.requestNetwork(NetworkRequest, networkCallback);
+                    connectivityManager.requestNetwork(NetworkRequest, networkCallback);*/
                 } else {
                     WifiConfiguration wifiConfig = new WifiConfiguration();
                     wifiConfig.SSID = String.format("\"%s\"", networkSSID);
