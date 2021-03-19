@@ -17,9 +17,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.victoria.skinhairdresser.Thread.ConnectedThread;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,6 +45,8 @@ public class LetOutActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
     ListView pair_lv;
 
+    TextView main_text, detail_text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +56,8 @@ public class LetOutActivity extends AppCompatActivity {
         bluetooth_btn = findViewById(R.id.bluetooth_btn);
         let_out_btn = findViewById(R.id.let_out_btn);
         confirm_btn = findViewById(R.id.confirm_btn);
+        main_text = findViewById(R.id.main_text);
+        detail_text = findViewById(R.id.detail_text);
 
         getPermission();
 
@@ -78,6 +85,18 @@ public class LetOutActivity extends AppCompatActivity {
         let_out_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                main_text.setText("화장품 토출중 ...");
+                detail_text.setText("토출이 완료될 때까지 손을 빼지 마세요");
+                if(connectedThread != null) {
+                    POOP_VALUE += "A" + "0" + " / ";
+                    POOP_VALUE += "B" + "0"  + " / ";
+                    POOP_VALUE += "C" + "0"  + " / ";
+                    POOP_VALUE += "D" + "0"  + " / ";
+                    POOP_VALUE += "E" + "0"  + " / ";
+                    POOP_VALUE += "F" + "0" ;
+                    connectedThread.write(POOP_VALUE);
+
+                }
                 Toast.makeText(getApplicationContext(),"토출하기",Toast.LENGTH_SHORT).show();
             }
         });
@@ -203,6 +222,8 @@ public class LetOutActivity extends AppCompatActivity {
                     new Handler().postDelayed(() -> {
                         //딜레이 후 시작할 코드 작성
                         Toast.makeText(getApplicationContext(), "connected to " + name, Toast.LENGTH_SHORT).show();
+                        main_text.setText("블루투스 연결 성공 !");
+                        detail_text.setText("토출을 원하시면 화장품 토출하기 버튼을 눌러주세요");
 //                        tv_status.setText("토출기와 연결하는데 성공했습니다" + "\n토출기 : " + name);
 //                        dialog.cancel();
                     }, 2000);

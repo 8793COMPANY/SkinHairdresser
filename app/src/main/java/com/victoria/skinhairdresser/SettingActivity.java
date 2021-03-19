@@ -12,9 +12,8 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 public class SettingActivity extends AppCompatActivity {
-<<<<<<< HEAD
+
     //내 정보 화면
-=======
     // 내 정보 화면
     // 글로벌
     AppCompatButton back_btn;
@@ -22,7 +21,6 @@ public class SettingActivity extends AppCompatActivity {
     View setting_go_start, setting_go_manage;
     Switch setting_letOut, setting_start, setting_login;
 
->>>>>>> b21c435b1de84d76a02576ba53b4ea7f6a840773
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

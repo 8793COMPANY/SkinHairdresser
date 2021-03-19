@@ -1,12 +1,18 @@
 package com.victoria.skinhairdresser.Thread;
-
+import android.app.Activity;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
 import android.os.SystemClock;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
 
 public class ConnectedThread extends Thread {
     private final BluetoothSocket mmSocket;
@@ -66,17 +72,19 @@ public class ConnectedThread extends Thread {
                     final String incomingMessage = new String(buffer, 0, bytes);
                     Log.i("From Machine P : ", incomingMessage);
 
-                    switch (incomingMessage.substring(0, 3)) {
-                        case "PMA" :
-                            Log.i("From Machine P : ", incomingMessage.substring(0, 3) + " Enable");
-                            PMA = true;
-                            break;
+                    if (incomingMessage.length() > 2) {
+                        switch (incomingMessage.substring(0, 3)) {
+                            case "PMA" :
+                                Log.i("From Machine P : ", incomingMessage.substring(0, 3) + " Enable");
+                                PMA = true;
+                                break;
 
-                        case "SOK" :
-                            Log.i("From Machine P : ", incomingMessage.substring(0, 3) + " Enable");
-                            SOK = true;
-                            this.write("OK");
-                            break;
+                            case "SOK" :
+                                Log.i("From Machine P : ", incomingMessage.substring(0, 3) + " Enable");
+                                SOK = true;
+                                this.write("OK");
+                                break;
+                        }
                     }
                 }
             } catch (IOException e) {

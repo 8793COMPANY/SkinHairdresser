@@ -130,7 +130,7 @@
                   android:layout_weight="48"></View>
 
               <EditText
-                  android:id="@+id/name_input"
+                  android:id="@+id/first_name_input"
                   android:layout_width="0dp"
                   android:layout_height="match_parent"
                   android:layout_weight="332"
@@ -154,6 +154,7 @@
                   ></View>
 
               <EditText
+                  android:id="@+id/last_name_input"
                   android:layout_width="0dp"
                   android:layout_height="match_parent"
                   android:layout_weight="152"
@@ -202,6 +203,7 @@
                       android:layout_weight="48"
                       android:background="@color/transparent"
                       android:textSize="16dp"
+                      android:textColor="@color/main_brown"
                       android:hint="생년월일"></EditText>
 
 
@@ -224,6 +226,7 @@
                   ></View>
 
               <androidx.appcompat.widget.AppCompatButton
+                  android:id="@+id/man_btn"
                   android:layout_width="0dp"
                   android:layout_height="match_parent"
                   android:layout_weight="100"
@@ -241,6 +244,7 @@
                   ></View>
 
               <androidx.appcompat.widget.AppCompatButton
+                  android:id="@+id/woman_btn"
                   android:layout_width="0dp"
                   android:layout_height="match_parent"
                   android:layout_weight="100"

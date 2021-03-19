@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         start_btn = findViewById(R.id.start_btn);
         let_out_btn = findViewById(R.id.let_out_btn);
 
+
         home_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

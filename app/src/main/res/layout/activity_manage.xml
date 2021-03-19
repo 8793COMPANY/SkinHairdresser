@@ -75,7 +75,60 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="85"></LinearLayout>
+        android:layout_weight="85"
+        android:orientation="vertical"
+        android:weightSum="85">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="41"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="38"
+            android:orientation="horizontal"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="60"></View>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="600"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="유분 : "
+                    android:textColor="@color/main_brown"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="정상입니다"
+                    android:textColor="@color/main_brown"></TextView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="60"></View>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"></View>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,12 +147,21 @@
             android:id="@+id/lineChart"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="600"></com.github.mikephil.charting.charts.LineChart>
+            android:layout_weight="600"
+            ></com.github.mikephil.charting.charts.LineChart>
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="60"></View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="26">
+
+
     </LinearLayout>
 
 </LinearLayout>
