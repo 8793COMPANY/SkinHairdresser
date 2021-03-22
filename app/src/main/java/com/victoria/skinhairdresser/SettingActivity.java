@@ -65,7 +65,6 @@ public class SettingActivity extends AppCompatActivity {
     String networkPass = "123456789";
     int netId = 0;
     Boolean check_flag = false;
-    List<WifiNetworkSuggestion> suggestionsList;
     // WIFI over O versions
     NetworkRequest networkRequest = null;
     ConnectivityManager.NetworkCallback networkCallback;
@@ -109,24 +108,6 @@ public class SettingActivity extends AppCompatActivity {
                     setting_start.setChecked(false);
                 }
             };
-
-            WifiNetworkSpecifier wifiNetworkSpecifier = new WifiNetworkSpecifier.Builder()
-                    .setSsid(networkSSID)
-                    .setWpa2Passphrase(networkPass)
-                    .build();
-
-            WifiNetworkSuggestion wifiNetworkSuggestion = new WifiNetworkSuggestion.Builder()
-                    .setSsid(networkSSID)
-                    .setWpa2Passphrase(networkPass)
-                    .build();
-
-            suggestionsList = new ArrayList<WifiNetworkSuggestion>();
-            suggestionsList.add(wifiNetworkSuggestion);
-
-            networkRequest = new NetworkRequest.Builder()
-                    .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
-                    .setNetworkSpecifier(wifiNetworkSpecifier)
-                    .build();
         }
 
         // Wifi check receiver
@@ -157,21 +138,8 @@ public class SettingActivity extends AppCompatActivity {
                 check_flag = true;
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    if (!wifiManager.isWifiEnabled()) {
-                        Intent panelIntent = new Intent(Settings.Panel.ACTION_WIFI);
-                        startActivityForResult(panelIntent, 1);
-                    }
-
-                    int status = wifiManager.addNetworkSuggestions(suggestionsList);
-                    if (status != WifiManager.STATUS_NETWORK_SUGGESTIONS_SUCCESS) {
-                    // do error handling here…
-
-                    }
-/*
-                    NetworkRequest NetworkRequest = networkRequest;
-                    ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-
-                    connectivityManager.requestNetwork(NetworkRequest, networkCallback);*/
+                    Intent panelIntent = new Intent(Settings.ACTION_WIFI_SETTINGS);
+                    startActivityForResult(panelIntent, 1);
                 } else {
                     WifiConfiguration wifiConfig = new WifiConfiguration();
                     wifiConfig.SSID = String.format("\"%s\"", networkSSID);
@@ -206,13 +174,6 @@ public class SettingActivity extends AppCompatActivity {
                 check_flag = false;
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    Boolean one_toast = wifiReceiver.getWifiConnection();
-                    ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-                    connectivityManager.unregisterNetworkCallback(networkCallback);
-
-                    if (one_toast) {
-                        Toast.makeText(this, "측정기 연결이 해제되었습니다", Toast.LENGTH_SHORT).show();
-                    }
                 } else {
                     Toast.makeText(this, "측정기 연결이 해제되었습니다", Toast.LENGTH_SHORT).show();
 
@@ -266,7 +227,6 @@ public class SettingActivity extends AppCompatActivity {
         if (!wifiManager.isWifiEnabled()) {
             setting_start.setChecked(false);
         } else {
-            Log.e("잉잉", "" + wifiManager.getConnectionInfo().getSSID() + " : " + networkSSID);
             if(!wifiManager.getConnectionInfo().getSSID().equals("\"" + networkSSID + "\"")) {
                 Toast.makeText(SettingActivity.this, "측정기와 연결해주세요", Toast.LENGTH_SHORT).show();
                 setting_start.setChecked(false);
