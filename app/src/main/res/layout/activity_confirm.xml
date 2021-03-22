@@ -78,12 +78,13 @@
             android:layout_weight="70"></View>
 
         <ProgressBar
-            android:id="@+id/aqua_percentage"
+            android:id="@+id/component_progress1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="40"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressDrawable="@drawable/vertical_progress"></ProgressBar>
+            android:progressDrawable="@drawable/vertical_progress"
+            android:max="100"></ProgressBar>
 
 
         <View
@@ -93,11 +94,13 @@
 
 
         <ProgressBar
+            android:id="@+id/component_progress2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="40"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressDrawable="@drawable/progress"></ProgressBar>
+            android:progressDrawable="@drawable/vertical_progress"
+            android:max="100"></ProgressBar>
 
         <View
             android:layout_width="0dp"
@@ -106,25 +109,13 @@
 
 
         <ProgressBar
+            android:id="@+id/component_progress3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="40"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressDrawable="@drawable/progress"></ProgressBar>
-
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="68"></View>
-
-
-        <ProgressBar
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="40"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressDrawable="@drawable/progress"></ProgressBar>
+            android:progressDrawable="@drawable/vertical_progress"
+            android:max="100"></ProgressBar>
 
 
         <View
@@ -134,11 +125,14 @@
 
 
         <ProgressBar
+            android:id="@+id/component_progress4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="40"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressDrawable="@drawable/progress"></ProgressBar>
+            android:progressDrawable="@drawable/vertical_progress"
+            android:max="100"></ProgressBar>
+
 
         <View
             android:layout_width="0dp"
@@ -147,11 +141,28 @@
 
 
         <ProgressBar
+            android:id="@+id/component_progress5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="40"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressDrawable="@drawable/progress"></ProgressBar>
+            android:progressDrawable="@drawable/vertical_progress"
+            android:max="100"></ProgressBar>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="68"></View>
+
+
+        <ProgressBar
+            android:id="@+id/component_progress6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/vertical_progress"
+            android:max="100"></ProgressBar>
 
 
         <View
@@ -181,6 +192,7 @@
             android:layout_weight="36"></View>
 
         <TextView
+            android:id="@+id/component_text1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -190,6 +202,7 @@
             android:textColor="@color/main_brown"></TextView>
 
         <TextView
+            android:id="@+id/component_text2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -200,6 +213,7 @@
 
 
         <TextView
+            android:id="@+id/component_text3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -209,6 +223,7 @@
             android:textColor="@color/main_brown"></TextView>
 
         <TextView
+            android:id="@+id/component_text4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -218,6 +233,7 @@
             android:textColor="@color/main_brown"></TextView>
 
         <TextView
+            android:id="@+id/component_text5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -227,6 +243,7 @@
             android:textColor="@color/main_brown"></TextView>
 
         <TextView
+            android:id="@+id/component_text6"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -256,6 +273,7 @@
             android:layout_weight="36"></View>
 
         <TextView
+            android:id="@+id/component_percentage1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -264,6 +282,7 @@
             android:textColor="@color/main_brown"></TextView>
 
         <TextView
+            android:id="@+id/component_percentage2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -273,6 +292,7 @@
 
 
         <TextView
+            android:id="@+id/component_percentage3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -281,6 +301,7 @@
             android:textColor="@color/main_brown"></TextView>
 
         <TextView
+            android:id="@+id/component_percentage4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -289,6 +310,7 @@
             android:textColor="@color/main_brown"></TextView>
 
         <TextView
+            android:id="@+id/component_percentage5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"
@@ -297,6 +319,7 @@
             android:textColor="@color/main_brown"></TextView>
 
         <TextView
+            android:id="@+id/component_percentage6"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="108"

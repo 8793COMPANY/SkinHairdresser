@@ -48,12 +48,13 @@
                 android:orientation="horizontal"
                 android:gravity="center">
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/user_image"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="150"
-                    android:background="@drawable/join_user_img"></ImageView>
+                    android:background="@drawable/join_user_img"
+                    app:shapeAppearanceOverlay="@style/circleImageView"></com.google.android.material.imageview.ShapeableImageView>
 
             </LinearLayout>
 
@@ -346,6 +347,7 @@
                   android:layout_weight="200"
                   android:text="확인"
                   android:textColor="@color/white"
+                  android:enabled="false"
                   android:background="@drawable/confirm_btn_img"></androidx.appcompat.widget.AppCompatButton>
 
           </LinearLayout>

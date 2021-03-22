@@ -35,6 +35,7 @@
                 android:layout_weight="40"></View>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/finish_btn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="72"
@@ -71,43 +72,42 @@
         android:layout_weight="1"
         android:background="@color/main_brown"></View>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1140">
+        android:layout_weight="1140"
+        android:orientation="horizontal"
+        android:weightSum="720">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <View
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_weight="60"></View>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="600"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:orientation="vertical"
-                android:weightSum="85">
-
+                android:layout_height="match_parent"
+                android:orientation="vertical">
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="41"></View>
+                    android:layout_height="21dp"></View>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="38"
-                    android:orientation="horizontal"
-                    android:weightSum="720">
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
+                    android:layout_height="108dp"
+                    android:orientation="vertical"
+                    android:layout_weight="108">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="600"
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -124,80 +124,96 @@
 
                     </LinearLayout>
 
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        ></com.github.mikephil.charting.charts.LineChart>
+
+
                     <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:background="@drawable/manage_textview_design"
+                        android:orientation="horizontal"
+                        android:weightSum="600">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="130"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="1주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="120"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="2주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="3주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="4주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6"></View>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
+                    android:layout_height="19dp"></View>
 
 
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/lineChart"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="600"
-                    ></com.github.mikephil.charting.charts.LineChart>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="26dp">
-            </LinearLayout>
-
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:orientation="vertical"
-                android:weightSum="85">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="41"></View>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="38"
-                    android:orientation="horizontal"
-                    android:weightSum="720">
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
+                    android:layout_height="108dp"
+                    android:orientation="vertical"
+                    android:layout_weight="108">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="600"
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -214,80 +230,97 @@
 
                     </LinearLayout>
 
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart2"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        ></com.github.mikephil.charting.charts.LineChart>
+
+
                     <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:background="@drawable/manage_textview_design"
+                        android:orientation="horizontal"
+                        android:weightSum="600">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="130"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="1주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="120"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="2주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="3주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="4주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6"></View>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
-
-
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/lineChart2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="600"
-                    ></com.github.mikephil.charting.charts.LineChart>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="26dp">
-            </LinearLayout>
-
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:orientation="vertical"
-                android:weightSum="85">
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="41"></View>
+                    android:layout_height="19dp"></View>
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="38"
-                    android:orientation="horizontal"
-                    android:weightSum="720">
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
+                    android:layout_height="108dp"
+                    android:orientation="vertical"
+                    android:layout_weight="108">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="600"
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -304,80 +337,98 @@
 
                     </LinearLayout>
 
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart3"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        ></com.github.mikephil.charting.charts.LineChart>
+
+
                     <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:background="@drawable/manage_textview_design"
+                        android:orientation="horizontal"
+                        android:weightSum="600">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="130"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="1주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="120"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="2주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="3주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="4주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6"></View>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
-
-
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/lineChart3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="600"
-                    ></com.github.mikephil.charting.charts.LineChart>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="26dp">
-            </LinearLayout>
-
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:orientation="vertical"
-                android:weightSum="85">
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="41"></View>
+                    android:layout_height="19dp"></View>
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="38"
-                    android:orientation="horizontal"
-                    android:weightSum="720">
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
+                    android:layout_height="108dp"
+                    android:orientation="vertical"
+                    android:layout_weight="108">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="600"
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -389,175 +440,104 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="수분이 부족해요!"
-                            android:textColor="@color/main_brown"></TextView>
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6"></View>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
-
-
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/lineChart4"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="600"></com.github.mikephil.charting.charts.LineChart>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="26dp">
-            </LinearLayout>
-
-
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:orientation="vertical"
-                android:weightSum="85">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="41"></View>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="38"
-                    android:orientation="horizontal"
-                    android:weightSum="720">
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="600"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="색소침착 : "
-                            android:textColor="@color/main_brown"></TextView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
                             android:text="정상입니다"
                             android:textColor="@color/main_brown"></TextView>
 
                     </LinearLayout>
 
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart4"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        ></com.github.mikephil.charting.charts.LineChart>
+
+
                     <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:background="@drawable/manage_textview_design"
+                        android:orientation="horizontal"
+                        android:weightSum="600">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="130"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="1주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="120"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="2주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="3주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="4주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6"></View>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
 
 
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/lineChart5"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="600"></com.github.mikephil.charting.charts.LineChart>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="26dp">
-            </LinearLayout>
-
-
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:orientation="vertical"
-                android:weightSum="85">
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="41"></View>
+                    android:layout_height="19dp"></View>
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="38"
-                    android:orientation="horizontal"
-                    android:weightSum="720">
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
+                    android:layout_height="108dp"
+                    android:orientation="vertical"
+                    android:layout_weight="108">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="600"
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -574,56 +554,422 @@
 
                     </LinearLayout>
 
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart5"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        ></com.github.mikephil.charting.charts.LineChart>
+
+
                     <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="60"></View>
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:background="@drawable/manage_textview_design"
+                        android:orientation="horizontal"
+                        android:weightSum="600">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="130"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="1주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="120"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="2주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="3주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="4주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"></View>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"
+                    android:orientation="vertical"
+                    android:layout_weight="108">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="민감도 : "
+                            android:textColor="@color/main_brown"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="정상입니다"
+                            android:textColor="@color/main_brown"></TextView>
+                    </LinearLayout>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart6"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        ></com.github.mikephil.charting.charts.LineChart>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:background="@drawable/manage_textview_design"
+                        android:orientation="horizontal"
+                        android:weightSum="600">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="130"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="1주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="120"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="2주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="3주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="4주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"></View>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"
+                    android:orientation="vertical"
+                    android:layout_weight="108">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="피부톤 : "
+                            android:textColor="@color/main_brown"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="정상입니다"
+                            android:textColor="@color/main_brown"></TextView>
+
+                    </LinearLayout>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart7"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        ></com.github.mikephil.charting.charts.LineChart>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:background="@drawable/manage_textview_design"
+                        android:orientation="horizontal"
+                        android:weightSum="600">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="130"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="1주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="120"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="2주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="3주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="4주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"></View>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"
+                    android:orientation="vertical"
+                    android:layout_weight="108">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="색소침착 : "
+                            android:textColor="@color/main_brown"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="정상입니다"
+                            android:textColor="@color/main_brown"></TextView>
+
+                    </LinearLayout>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart8"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        ></com.github.mikephil.charting.charts.LineChart>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:background="@drawable/manage_textview_design"
+                        android:orientation="horizontal"
+                        android:weightSum="600">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="130"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="1주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="120"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="2주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="3주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="125"></View>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="25"
+                            android:text="4주"
+                            android:textColor="@color/main_brown"
+                            android:textSize="8dp"></TextView>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6"></View>
+                    android:layout_height="21dp"></View>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
+        </ScrollView>
 
 
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/lineChart6"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="600"
-                    ></com.github.mikephil.charting.charts.LineChart>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="60"></View>
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"></View>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="26dp">
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-
-
-    </ScrollView>
+    </LinearLayout>
 
 
 

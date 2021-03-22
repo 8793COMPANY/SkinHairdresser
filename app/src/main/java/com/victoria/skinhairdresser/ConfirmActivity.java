@@ -11,14 +11,21 @@ import android.widget.Toast;
 
 public class ConfirmActivity extends AppCompatActivity {
     //앰플 잔량 확인
-    ProgressBar aqua_percentage;
+    ProgressBar component1,component2,component3,component4,component5,component6;
     Button finish_btn, start_btn, order_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm);
 
-        aqua_percentage = findViewById(R.id.aqua_percentage);
+        component1 = findViewById(R.id.component_progress1);
+        component2 = findViewById(R.id.component_progress2);
+        component3 = findViewById(R.id.component_progress3);
+        component4 = findViewById(R.id.component_progress4);
+        component5 = findViewById(R.id.component_progress5);
+        component6 = findViewById(R.id.component_progress6);
+
+
         finish_btn = findViewById(R.id.finish_btn);
         order_btn = findViewById(R.id.order_btn);
         start_btn = findViewById(R.id.start_btn);
@@ -46,7 +53,13 @@ public class ConfirmActivity extends AppCompatActivity {
             }
         });
 
-        aqua_percentage.setMax(100);
-        aqua_percentage.setProgress(50);
+        component1.setProgress(80);
+        component2.setProgress(50);
+        component3.setProgress(80);
+        component4.setProgress(40);
+        component5.setProgress(100);
+        component6.setProgress(80);
+
+
     }
 }

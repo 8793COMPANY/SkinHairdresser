@@ -3,6 +3,7 @@ package com.victoria.skinhairdresser;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -34,15 +35,40 @@ public class LoginActivity extends AppCompatActivity {
         auto_login_btn = findViewById(R.id.auto_login_btn);
         model_number = findViewById(R.id.model_num);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("appData",MODE_PRIVATE);
+        String model_num = sharedPreferences.getString("model_num","?");
+
+        if (sharedPreferences.getBoolean("auto_login",false)){
+            if (!model_num.equals("?"))
+                model_number.setText(model_num);
+            auto_login_btn.setBackgroundResource(R.drawable.auto_login_btn_on);
+            auto_login_check = true;
+        }
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (model_number.getText().toString().trim().equals("")){
                     Toast.makeText(getApplicationContext(),"모델번호를 입력해주세요.",Toast.LENGTH_SHORT).show();
                 }else{
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                    if (model_num.equals("?")){
+                        editor.commit();
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }else{
+                        if (model_number.getText().toString().trim().equals(model_num)) {
+                            editor.commit();
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }else{
+                            Toast.makeText(getApplicationContext(),"모델번호가 존재하지 않습니다.",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
                 }
 
             }
@@ -52,7 +78,9 @@ public class LoginActivity extends AppCompatActivity {
         join_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
+                intent.putExtra("detail","join");
                 startActivity(intent);
             }
         });
@@ -76,9 +104,11 @@ public class LoginActivity extends AppCompatActivity {
                         if (auto_login_check){
                             auto_login_btn.setBackgroundResource(R.drawable.auto_login_btn_off);
                             auto_login_check = false;
+                            editor.putBoolean("auto_login",false);
                         }else{
                             auto_login_btn.setBackgroundResource(R.drawable.auto_login_btn_on);
                             auto_login_check = true;
+                            editor.putBoolean("auto_login",true);
                         }
                     }
                 });
