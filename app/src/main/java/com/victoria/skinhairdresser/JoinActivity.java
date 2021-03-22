@@ -3,7 +3,11 @@ package com.victoria.skinhairdresser;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,6 +21,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.google.android.material.imageview.ShapeableImageView;
+
+import java.io.InputStream;
 import java.security.acl.Group;
 
 public class JoinActivity extends AppCompatActivity implements TextWatcher {
@@ -27,18 +34,22 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
     LinearLayout linearLayout;
     EditText first_name,last_name,birth,address,detail,model_number;
     boolean confirm = false;
+    private static final int REQUEST_CODE = 0;
+    ShapeableImageView user_image;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
-
+        SharedPreferences sharedPreferences = getSharedPreferences("appData",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getRealSize(size);
         int height = size.y;
 
+        user_image = findViewById(R.id.user_image);
         camera_btn = findViewById(R.id.camera_btn);
         linearLayout = findViewById(R.id.camera_linear);
         woman_btn = findViewById(R.id.woman_btn);
@@ -67,6 +78,7 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
                 woman_btn.setTextColor(getResources().getColor(R.color.white));
                 man_btn.setBackgroundColor(getResources().getColor(R.color.transparent));
                 man_btn.setTextColor(getResources().getColor(R.color.main_brown));
+                editor.putInt("sex",0);
             }
         });
 
@@ -77,6 +89,7 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
                 woman_btn.setTextColor(getResources().getColor(R.color.main_brown));
                 man_btn.setBackgroundColor(getResources().getColor(R.color.main_brown));
                 man_btn.setTextColor(getResources().getColor(R.color.white));
+                editor.putInt("sex",1);
             }
         });
         confirm_btn.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +104,7 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
                     if (textCheck(first_name) && textCheck(last_name) && textCheck(birth) && textCheck(address) && textCheck(detail) && confirm){
                         join_btn.setBackgroundResource(R.drawable.brown_btn_img);
                         join_btn.setTextColor(getResources().getColor(R.color.white));
+                        join_btn.setEnabled(true);
                     }
                 }
 
@@ -101,6 +115,12 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
         join_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                editor.putString("last_name",last_name.getText().toString());
+                editor.putString("first_name",first_name.getText().toString());
+                editor.putString("address",address.getText().toString());
+                editor.putString("detail",detail.getText().toString());
+                editor.putString("model_num",model_number.getText().toString());
+                editor.commit();
                 finish();
             }
         });
@@ -117,6 +137,10 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
             @Override
             public void onClick(View v) {
                 Log.e("click","click");
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(intent, REQUEST_CODE);
             }
         });
 
@@ -133,6 +157,7 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
         if (textCheck(first_name) && textCheck(last_name) && textCheck(birth) && textCheck(address) && textCheck(detail) && confirm){
             join_btn.setBackgroundResource(R.drawable.brown_btn_img);
             join_btn.setTextColor(getResources().getColor(R.color.white));
+            join_btn.setEnabled(true);
         }
     }
 
@@ -146,7 +171,28 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
             return false;
         else
             return true;
+    }
 
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                try {
+                    InputStream in = getContentResolver().openInputStream(data.getData());
+
+                    Bitmap img = BitmapFactory.decodeStream(in);
+                    in.close();
+                    BitmapDrawable ob = new BitmapDrawable(getResources(), img);
+                    user_image.setBackground(ob);
+                } catch (Exception e) {
+
+                }
+            } else if (resultCode == RESULT_CANCELED) {
+                Toast.makeText(this, "사진 선택 취소", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }

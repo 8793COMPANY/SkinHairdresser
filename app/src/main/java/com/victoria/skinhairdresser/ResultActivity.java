@@ -55,6 +55,7 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ResultActivity.this, ResultMoreActivity.class);
+                intent.putExtra("value",randomValue);
                 startActivity(intent);
                 finish();
             }

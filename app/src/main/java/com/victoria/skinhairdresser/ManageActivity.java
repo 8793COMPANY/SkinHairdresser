@@ -5,6 +5,8 @@ import androidx.core.content.ContextCompat;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
@@ -22,14 +24,16 @@ import static java.security.AccessController.getContext;
 
 public class ManageActivity extends AppCompatActivity {
     //고객 진단 관리 화면
-    private LineChart chart, chart2, chart3, chart4, chart5, chart6;
+    private LineChart chart, chart2, chart3, chart4, chart5, chart6, chart7, chart8;
     float average = 0;
+    Button finish_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage);
 
+        finish_btn = findViewById(R.id.finish_btn);
 
         chart = findViewById(R.id.lineChart);
         chart2 = findViewById(R.id.lineChart2);
@@ -37,6 +41,9 @@ public class ManageActivity extends AppCompatActivity {
         chart4 = findViewById(R.id.lineChart4);
         chart5 = findViewById(R.id.lineChart5);
         chart6 = findViewById(R.id.lineChart6);
+        chart7 = findViewById(R.id.lineChart7);
+        chart8 = findViewById(R.id.lineChart8);
+
 
 
         settingChart(chart);
@@ -45,6 +52,17 @@ public class ManageActivity extends AppCompatActivity {
         settingChart(chart4);
         settingChart(chart5);
         settingChart(chart6);
+        settingChart(chart7);
+        settingChart(chart8);
+
+
+
+        finish_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
@@ -54,6 +72,8 @@ public class ManageActivity extends AppCompatActivity {
         chart.setTouchEnabled(false);
         chart.setPinchZoom(false);
         chart.setBackgroundColor(Color.WHITE);
+        chart.animateXY(2000,2000);
+
 
         Legend l = chart.getLegend();
         l.setEnabled(false);
@@ -105,6 +125,9 @@ public class ManageActivity extends AppCompatActivity {
         set1.setDrawCircles(false);
         set1.setColor(ContextCompat.getColor(this, R.color.main_brown));
         set1.setFillColor(R.color.main_brown);
+
+
+        chart.getXAxis().setAxisMinimum(set1.getXMin() - 0.25f);
 
         chart.setData(data);
     }
