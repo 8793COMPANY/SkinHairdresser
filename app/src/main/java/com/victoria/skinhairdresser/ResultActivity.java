@@ -1,6 +1,7 @@
 package com.victoria.skinhairdresser;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.victoria.skinhairdresser.Room.AppDatabase;
+import com.victoria.skinhairdresser.Room.Measurement;
 
 import java.util.Random;
 
@@ -19,6 +23,9 @@ public class ResultActivity extends AppCompatActivity {
     ImageView result_graph;
     int [] graph_img = {R.drawable.result_img1,R.drawable.result_img2,R.drawable.result_img3,R.drawable.result_img4};
     String [] advice_text = {};
+
+    AppDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +35,12 @@ public class ResultActivity extends AppCompatActivity {
         result_more_btn = findViewById(R.id.result_more_btn);
         result_graph = findViewById(R.id.result_graph);
 
+        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "DB").build();
+
         Random random = new Random();
         int randomValue = random.nextInt(4);
         Log.e("randomValue",randomValue+"");
         result_graph.setBackgroundResource(graph_img[randomValue]);
-
 
         let_out_btn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -20,7 +20,9 @@ import android.os.Handler;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -32,8 +34,10 @@ import com.victoria.skinhairdresser.cw.CustomWebView;
 
 
 import java.io.BufferedInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -156,20 +160,10 @@ public class StartActivity extends AppCompatActivity {
                     start_tv_1.setText("스트리밍 대기 중 ···");
                     start_tv_2.setText("스트리밍 시작하기 버튼을 눌러주세요");
                 } else {
-                    //
-                    PlayHttpStream(HOST + "/hmirror");
-                    //wv.stopLoading();
-                    //wv.loadUrl("about:blank");
+                    ModeChange("/hmirror",0);
+                    ModeChange("/vflip",500);
+                    ModeChange(":81/stream", 1500);
 
-                    handler2.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (true) {
-                                PlayHttpStream(HOST + ":81/stream");
-                            }
-                        }
-                    },1000);
-                    //
                     wv.setForeground(getResources().getDrawable(android.R.color.transparent));
                     start_tv_1.setText("측정 준비 완료");
                     start_tv_2.setText("측정하기 버튼을 눌러주세요");
@@ -220,7 +214,8 @@ public class StartActivity extends AppCompatActivity {
                                 btn_stream.setEnabled(true);
                             } else {
                                 wv.stopLoading();
-                                PlayHttpStream(HOST + "/hmirror");
+                                ModeChange("/hmirror",0);
+                                ModeChange("/vflip",500);
                                 vibrator.vibrate(100);
                                 Toast.makeText(StartActivity.this, "측정이 완료되었습니다", Toast.LENGTH_LONG).show();
 
@@ -245,5 +240,18 @@ public class StartActivity extends AppCompatActivity {
 
         wv.getSettings().setJavaScriptEnabled(true);
         wv.loadUrl(httpUrl, extraHeaders);
+    }
+
+    private void ModeChange(String mode, int millis){
+        final Handler mode_handler = new Handler();
+
+        mode_handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (true) {
+                    PlayHttpStream(HOST + mode);
+                }
+            }
+        }, millis);
     }
 }
