@@ -15,7 +15,11 @@ public interface MeasurementDao {
 
     @Query("SELECT * FROM measurement_table WHERE year LIKE :year AND month LIKE :month " +
     "ORDER BY day DESC")
-    Measurement findByYm(String year, String month);
+    Measurement findByYm(int year, int month);
+
+    @Query("SELECT * FROM measurement_table WHERE year LIKE :year AND month LIKE :month " +
+            "AND day LIKE :day ")
+    Measurement findByYmd(int year, int month, int day);
 
     @Update
     void update(Measurement measurement);

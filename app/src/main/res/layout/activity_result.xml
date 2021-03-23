@@ -111,13 +111,11 @@
             android:layout_height="match_parent"
             android:layout_weight="135"></View>
 
-        <ImageView
-            android:id="@+id/result_graph"
+        <com.github.mikephil.charting.charts.RadarChart
+            android:id="@+id/real_result_graph"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="450"
-            android:background="@drawable/result_img1"></ImageView>
-
+            android:layout_weight="450"/>
 
         <View
             android:layout_width="0dp"
