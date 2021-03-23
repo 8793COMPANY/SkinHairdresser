@@ -5,28 +5,48 @@ import androidx.cardview.widget.CardView;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.github.mikephil.charting.charts.RadarChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.RadarData;
+import com.github.mikephil.charting.data.RadarDataSet;
+import com.github.mikephil.charting.data.RadarEntry;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.victoria.skinhairdresser.Room.AppDatabase;
 import com.victoria.skinhairdresser.Room.Measurement;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Random;
 
 import javax.xml.transform.Result;
 
 public class ResultActivity extends AppCompatActivity {
-    //진단 결과 화면
+    // -> 진단 결과 화면
+    // 글로벌
     Button let_out_btn, back_btn, result_more_btn;
-    ImageView result_graph;
-    int [] graph_img = {R.drawable.result_img1,R.drawable.result_img2,R.drawable.result_img3,R.drawable.result_img4};
     String [] advice_text = {};
+    RadarChart real_result_graph;
+
+    // 측정값 저장 배열
+    int[] values = new int[]{
+         0, 0, 0, 0, 0, 0, 0, 0
+    };
 
     AppDatabase db;
+    Calendar calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,41 +55,129 @@ public class ResultActivity extends AppCompatActivity {
         let_out_btn = findViewById(R.id.let_out_btn);
         back_btn = findViewById(R.id.back_btn);
         result_more_btn = findViewById(R.id.result_more_btn);
-        result_graph = findViewById(R.id.result_graph);
+        real_result_graph = findViewById(R.id.real_result_graph);
 
-        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "DB").build();
+        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "DB").allowMainThreadQueries().build();
+        calendar = Calendar.getInstance();
 
+        // 측정값 초기화
         Random random = new Random();
-        int randomValue = random.nextInt(4);
-        Log.e("randomValue",randomValue+"");
-        result_graph.setBackgroundResource(graph_img[randomValue]);
+        int j = 0;
+        for (int i : values) {
+            values[j] = random.nextInt(5) + 1;
+            j++;
+        }
 
-        Calendar calendar = Calendar.getInstance();
-
+        // 준비된 DB 로우
         Measurement measurement = new Measurement(
+                // Y-M-D
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH) + 1,
                 calendar.get(Calendar.DAY_OF_MONTH),
 
                 // pg
-                random.nextInt(4),
+                values[0],
                 // moisture
-                random.nextInt(4),
+                values[1],
                 // hole
-                random.nextInt(4),
+                values[2],
                 // tone
-                random.nextInt(4),
+                values[3],
                 // color_washing
-                random.nextInt(4),
+                values[4],
                 // sensitivity
-                random.nextInt(4),
+                values[5],
                 // fold
-                random.nextInt(4),
+                values[6],
                 // oil
-                random.nextInt(4)
+                values[7]
         );
 
-        db.measurementDao().insertAll(measurement);
+        // 오늘 날짜, DB (오늘)날짜 비교해서 있으면 DB UPDATE
+        if (db.measurementDao().findByYmd(
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH) + 1,
+                calendar.get(Calendar.DAY_OF_MONTH)) != null) {
+            db.measurementDao().update(measurement);
+        } else {
+            // 없으면 DB INSERT
+            db.measurementDao().insertAll(measurement);
+        }
+
+        // 레이더 그래프 초기화 (RadarEntry - 밸류 어레이)
+        // RadarEntry - 데이터 초기화
+        List<RadarEntry> entries = new ArrayList<>();
+        entries.add(new RadarEntry(values[0], 0));
+        entries.add(new RadarEntry(values[1], 0));
+        entries.add(new RadarEntry(values[2], 0));
+        entries.add(new RadarEntry(values[3], 0));
+        entries.add(new RadarEntry(values[4], 0));
+        entries.add(new RadarEntry(values[5], 0));
+        entries.add(new RadarEntry(values[6], 0));
+        entries.add(new RadarEntry(values[7], 0));
+
+        // 레이더 그래프 초기화 (RadarDataSet - 밸류 컨트롤러)
+        // RadarDataSet - 데이터 스타일링
+        RadarDataSet radarDataSet = new RadarDataSet(entries, "");
+        radarDataSet.setDrawValues(false);
+        radarDataSet.setColor(Color.parseColor("#bc8b6c"));
+        radarDataSet.setLineWidth(2.6f);
+        radarDataSet.setDrawFilled(true);
+        radarDataSet.setFillColor(Color.parseColor("#bc8b6c"));
+        radarDataSet.setFillAlpha(153);
+
+        // 레이더 그래프 초기화 (RadarData - 데이터 컨테이너)
+        // * RadarData - 데이터 라벨링 Start
+        RadarData radarData = new RadarData(radarDataSet);
+        String[] strings = new String[]{
+                "피지분비", "수분", "모공", "피부톤", "색소침착", "민감도", "주름", "유분", ""
+        };
+        ValueFormatter valueFormatter = new ValueFormatter() {
+            @Override
+            public String getAxisLabel(float value, AxisBase axis) {
+                return strings[(int) value];
+            }
+        };
+        // * RadarData - 데이터 라벨링 End
+
+        // * 레이더 그래프 스타일링 Start
+        // X 좌표
+        XAxis xAxis = real_result_graph.getXAxis();
+        xAxis.setValueFormatter(valueFormatter);
+        xAxis.setAxisMaximum(5);
+        xAxis.setAxisMinimum(1);
+        xAxis.setDrawLabels(false);
+        // Y 좌표
+        YAxis yAxis = real_result_graph.getYAxis();
+        yAxis.setDrawLabels(false);
+        // 설명
+        Description description = real_result_graph.getDescription();
+        description.setEnabled(false);
+        // 범례
+        Legend legend = real_result_graph.getLegend();
+        legend.setEnabled(false);
+        // 라인, 투명도 등
+        real_result_graph.setWebColor(Color.parseColor("#FFFFFF"));
+        real_result_graph.setWebColorInner(Color.parseColor("#FFFFFF"));
+        real_result_graph.setAlpha(1);
+        real_result_graph.setWebLineWidth(2.1f);
+        real_result_graph.setWebLineWidthInner(2.1f);
+        real_result_graph.setRotationEnabled(false);
+        // * 레이더 그래프 스타일링 End
+
+        // 레이더 그래프 데이터 설정
+        real_result_graph.setData(radarData);
+        real_result_graph.invalidate();
+
+        // DB 로그 체크
+        List<Measurement> all = db.measurementDao().getAll();
+        Log.e("DB", "-- 머리에 뭐가 들었을꼬? --");
+        for (Measurement m : all) {
+            Log.e("DB", "cid : " + m.cid + " , " + "year : " + m.year + " , " + "month : " + m.month + " , " + "day : " + m.day + " , "
+                    + "pg : " + m.pg + " , " + "moisture : " + m.moisture + " , " + "hole : " + m.hole + " , " + "tone : " + m.tone + " , "
+                    + "sensitivity : " + m.sensitivity + " , " + "fold : " + m.fold + " , " + "oil : " + m.oil);
+        }
+
 
         let_out_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +192,6 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ResultActivity.this, ResultMoreActivity.class);
-                intent.putExtra("value",randomValue);
                 startActivity(intent);
                 finish();
             }

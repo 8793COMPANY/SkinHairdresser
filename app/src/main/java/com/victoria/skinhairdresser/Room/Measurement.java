@@ -57,4 +57,52 @@ public class Measurement {
         this.fold = fold;
         this.oil = oil;
     }
+
+    public int getCid() {
+        return cid;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public int getPg() {
+        return pg;
+    }
+
+    public int getMoisture() {
+        return moisture;
+    }
+
+    public int getHole() {
+        return hole;
+    }
+
+    public int getTone() {
+        return tone;
+    }
+
+    public int getColor_washing() {
+        return color_washing;
+    }
+
+    public int getSensitivity() {
+        return sensitivity;
+    }
+
+    public int getFold() {
+        return fold;
+    }
+
+    public int getOil() {
+        return oil;
+    }
 }
