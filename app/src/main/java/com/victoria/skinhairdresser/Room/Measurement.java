@@ -11,40 +11,40 @@ public class Measurement {
     public int cid;
 
     @ColumnInfo(name = "year")
-    public String year;
+    public int year;
 
     @ColumnInfo(name = "month")
-    public String month;
+    public int month;
 
     @ColumnInfo(name = "day")
-    public String day;
+    public int day;
 
     @ColumnInfo(name = "pg")
-    public String pg;
+    public int pg;
 
     @ColumnInfo(name = "moisture")
-    public String moisture;
+    public int moisture;
 
     @ColumnInfo(name = "hole")
-    public String hole;
+    public int hole;
 
     @ColumnInfo(name = "tone")
-    public String tone;
+    public int tone;
 
     @ColumnInfo(name = "color_washing")
-    public String color_washing;
+    public int color_washing;
 
     @ColumnInfo(name = "sensitive")
-    public String sensitivity;
+    public int sensitivity;
 
     @ColumnInfo(name = "fold")
-    public String fold;
+    public int fold;
 
     @ColumnInfo(name = "oil")
-    public String oil;
+    public int oil;
 
-    Measurement(String year, String month, String day,
-                String pg, String moisture, String hole, String tone, String color_washing, String sensitivity, String fold, String oil) {
+    public Measurement(int year, int month, int day,
+                       int pg, int moisture, int hole, int tone, int color_washing, int sensitivity, int fold, int oil) {
         this.year = year;
         this.month = month;
         this.day = day;

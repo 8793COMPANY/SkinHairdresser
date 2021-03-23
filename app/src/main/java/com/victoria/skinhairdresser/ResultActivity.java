@@ -1,6 +1,7 @@
 package com.victoria.skinhairdresser;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.room.Room;
 
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import com.victoria.skinhairdresser.Room.AppDatabase;
 import com.victoria.skinhairdresser.Room.Measurement;
 
+import java.util.Calendar;
 import java.util.Random;
 
 import javax.xml.transform.Result;
@@ -41,6 +43,33 @@ public class ResultActivity extends AppCompatActivity {
         int randomValue = random.nextInt(4);
         Log.e("randomValue",randomValue+"");
         result_graph.setBackgroundResource(graph_img[randomValue]);
+
+        Calendar calendar = Calendar.getInstance();
+
+        Measurement measurement = new Measurement(
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH) + 1,
+                calendar.get(Calendar.DAY_OF_MONTH),
+
+                // pg
+                random.nextInt(4),
+                // moisture
+                random.nextInt(4),
+                // hole
+                random.nextInt(4),
+                // tone
+                random.nextInt(4),
+                // color_washing
+                random.nextInt(4),
+                // sensitivity
+                random.nextInt(4),
+                // fold
+                random.nextInt(4),
+                // oil
+                random.nextInt(4)
+        );
+
+        db.measurementDao().insertAll(measurement);
 
         let_out_btn.setOnClickListener(new View.OnClickListener() {
             @Override

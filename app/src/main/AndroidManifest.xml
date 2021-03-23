@@ -48,7 +48,6 @@
         <activity android:name=".ConfirmActivity" />
         <activity android:name=".LetOutActivity" />
         <activity android:name=".StartActivity" >
-
         </activity>
         <activity android:name=".SettingActivity" >
         </activity>

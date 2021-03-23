@@ -72,7 +72,10 @@ public class StartActivity extends AppCompatActivity {
     // widget
     TextView start_tv_1, start_tv_2;
     ImageButton start_close_btn, start_check_wifi;
-    LinearLayout btn_stream, start_20_sec;
+    LinearLayout btn_stream;
+    LinearLayout start_20_sec;
+
+    Button mode_1, mode_2, mode_3, mode_4, mode_5, mode_6;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -108,6 +111,48 @@ public class StartActivity extends AppCompatActivity {
         start_check_wifi = findViewById(R.id.start_check_wifi);
         start_tv_1 = findViewById(R.id.start_tv_1);
         start_tv_2 = findViewById(R.id.start_tv_2);
+        mode_1 = findViewById(R.id.mode_1);
+        mode_2 = findViewById(R.id.mode_2);
+        mode_3 = findViewById(R.id.mode_3);
+        mode_4 = findViewById(R.id.mode_4);
+        mode_5 = findViewById(R.id.mode_5);
+        mode_6 = findViewById(R.id.mode_6);
+
+        mode_1.setOnClickListener(v -> {
+            ModeChange(":81/one", 1000);
+            ModeChange(":81/stream", 1500);
+            Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
+        });
+
+        mode_2.setOnClickListener(v -> {
+            ModeChange(":81/two", 1000);
+            ModeChange(":81/stream", 1500);
+            Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
+        });
+
+        mode_3.setOnClickListener(v -> {
+            ModeChange(":81/three", 1000);
+            ModeChange(":81/stream", 1500);
+            Toast.makeText(this, "3", Toast.LENGTH_SHORT).show();
+        });
+
+        mode_4.setOnClickListener(v -> {
+            ModeChange(":81/four", 1000);
+            ModeChange(":81/stream", 1500);
+            Toast.makeText(this, "4", Toast.LENGTH_SHORT).show();
+        });
+
+        mode_5.setOnClickListener(v -> {
+            ModeChange(":81/five", 1000);
+            ModeChange(":81/stream", 1500);
+            Toast.makeText(this, "5", Toast.LENGTH_SHORT).show();
+        });
+
+        mode_6.setOnClickListener(v -> {
+            ModeChange(":81/six", 1000);
+            ModeChange(":81/stream", 1500);
+            Toast.makeText(this, "6", Toast.LENGTH_SHORT).show();
+        });
 
         final Handler handler_main = new Handler();
         final Handler handler = new Handler();
@@ -162,7 +207,9 @@ public class StartActivity extends AppCompatActivity {
                 } else {
                     ModeChange("/hmirror",0);
                     ModeChange("/vflip",500);
+                    ModeChange(":81/one", 1000);
                     ModeChange(":81/stream", 1500);
+
 
                     wv.setForeground(getResources().getDrawable(android.R.color.transparent));
                     start_tv_1.setText("측정 준비 완료");

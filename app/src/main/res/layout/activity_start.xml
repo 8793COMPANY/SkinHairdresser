@@ -244,6 +244,13 @@
             android:layout_height="0dp"
             android:layout_weight="148.8"/>
 
+        <!--<Button
+            android:id="@+id/start_stream_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="test" />-->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -261,6 +268,27 @@
                 android:layout_height="match_parent"
                 android:layout_weight="580"
                 android:background="@drawable/start_stream_btn">
+
+                <Button
+                    android:id="@+id/mode_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/mode_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/mode_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:text="3" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -311,6 +339,28 @@
                     android:textSize="16dp"
                     style="@style/DEFAULT_FONT_STYLE"
                     android:text="@string/measure" />
+
+
+                <Button
+                    android:id="@+id/mode_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/mode_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:text="5" />
+
+                <Button
+                    android:id="@+id/mode_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:text="6" />
 
             </LinearLayout>
 
