@@ -1,6 +1,7 @@
 package com.victoria.skinhairdresser;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.imageview.ShapeableImageView;
@@ -30,12 +32,13 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
 
     //회원가입
 
-    Button camera_btn, woman_btn,man_btn,confirm_btn,join_btn;
-    LinearLayout linearLayout;
+    Button camera_btn, woman_btn,man_btn,confirm_btn,join_btn,finish_btn;
+    LinearLayout linearLayout,augment_view,reduce_view,top_bar;
     EditText first_name,last_name,birth,address,detail,model_number;
     boolean confirm = false;
     private static final int REQUEST_CODE = 0;
     ShapeableImageView user_image;
+    TextView detail_text;
 
 
     @Override
@@ -56,6 +59,8 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
         man_btn = findViewById(R.id.man_btn);
         confirm_btn = findViewById(R.id.confirm_btn);
         join_btn = findViewById(R.id.join_btn);
+        detail_text = findViewById(R.id.detail_text);
+        finish_btn = findViewById(R.id.finish_btn);
 
         first_name = findViewById(R.id.first_name_input);
         last_name = findViewById(R.id.last_name_input);
@@ -64,11 +69,43 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
         detail = findViewById(R.id.address_detail_input);
         model_number = findViewById(R.id.model_num_input);
 
+        top_bar = findViewById(R.id.top_bar);
+        augment_view = findViewById(R.id.augment_view);
+        reduce_view = findViewById(R.id.reduce_view);
+
         first_name.addTextChangedListener(this);
         last_name.addTextChangedListener(this);
         birth.addTextChangedListener(this);
         address.addTextChangedListener(this);
         detail.addTextChangedListener(this);
+
+
+        if (getIntent().getStringExtra("detail").equals("edit")){
+            top_bar.setVisibility(View.VISIBLE);
+            detail_text.setText("");
+            augment_view.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,0, (int) ((height/ 1280.0) * 36)));
+            reduce_view.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,0, (int) ((height/ 1280.0) * 110)));
+
+            first_name.setText(sharedPreferences.getString("first_name","민경"));
+            last_name.setText(sharedPreferences.getString("last_name","김"));
+            birth.setText(sharedPreferences.getString("birth","2000.03.21"));
+            address.setText(sharedPreferences.getString("address","00시 00구 00동"));
+            detail.setText(sharedPreferences.getString("detail","00아파트 00동 00호"));
+            model_number.setText(sharedPreferences.getString("model_num","AA1234"));
+
+            join_btn.setBackgroundResource(R.drawable.brown_btn_img);
+            join_btn.setText("수정하기");
+            join_btn.setTextColor(getResources().getColor(R.color.white));
+            join_btn.setEnabled(true);
+
+            if (sharedPreferences.getInt("sex",0) == 0){
+                woman_btn.setBackgroundResource(R.drawable.woman_btn_on);
+                woman_btn.setTextColor(getResources().getColor(R.color.white));
+            }else{
+                man_btn.setBackgroundColor(getResources().getColor(R.color.main_brown));
+                man_btn.setTextColor(getResources().getColor(R.color.white));
+            }
+        }
 
 
         woman_btn.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +129,7 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
                 editor.putInt("sex",1);
             }
         });
+
         confirm_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,6 +159,13 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
                 editor.putString("detail",detail.getText().toString());
                 editor.putString("model_num",model_number.getText().toString());
                 editor.commit();
+                finish();
+            }
+        });
+
+        finish_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });

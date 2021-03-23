@@ -203,6 +203,7 @@ public class SettingActivity extends AppCompatActivity {
 
         setting_edit_info.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
+            intent.putExtra("detail","edit");
             startActivity(intent);
             finish();
         });

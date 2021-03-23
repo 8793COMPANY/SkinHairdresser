@@ -7,4 +7,16 @@
     android:background="@drawable/recommend_image"
     tools:context=".RecommendActivity">
 
+    <Button
+        android:id="@+id/test"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/recommend_image_background"
+        android:gravity="right"
+        android:rotation="150"
+        android:text="Green"
+        android:textColor="@color/white"
+        android:textSize="5dp"
+        app:backgroundTint="@color/main_brown"></Button>
+
 </LinearLayout>

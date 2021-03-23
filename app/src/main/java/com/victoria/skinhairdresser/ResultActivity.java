@@ -2,7 +2,7 @@ package com.victoria.skinhairdresser;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.room.Room;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,7 +37,7 @@ public class ResultActivity extends AppCompatActivity {
         result_more_btn = findViewById(R.id.result_more_btn);
         result_graph = findViewById(R.id.result_graph);
 
-        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "DB").build();
+//        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "DB").build();
 
         Random random = new Random();
         int randomValue = random.nextInt(4);

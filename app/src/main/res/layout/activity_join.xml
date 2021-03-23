@@ -11,13 +11,77 @@
 
 
     <LinearLayout
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="152"></LinearLayout>
+        android:layout_weight="141"
+        android:orientation="vertical"
+        android:weightSum="141"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="34"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="72"
+            android:orientation="horizontal"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40"></View>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/finish_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="72"
+                android:background="@drawable/finish_btn"></androidx.appcompat.widget.AppCompatButton>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="496"
+                android:text="내 정보 편집하기"
+                android:textSize="20dp"
+                android:textColor="@color/main_brown"
+                android:gravity="center"></TextView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="112"></View>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="34"></LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/main_brown"></View>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11"></LinearLayout>
 
 
 
     <TextView
+        android:id="@+id/detail_text"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="45"
@@ -28,9 +92,11 @@
         ></TextView>
 
     <LinearLayout
+        android:id="@+id/augment_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="16"></LinearLayout>
+        android:layout_weight="16"
+        android:orientation="vertical"></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -92,9 +158,11 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/reduce_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="130"></LinearLayout>
+        android:layout_weight="130"
+        android:orientation="vertical"></LinearLayout>
 
 
     <LinearLayout
