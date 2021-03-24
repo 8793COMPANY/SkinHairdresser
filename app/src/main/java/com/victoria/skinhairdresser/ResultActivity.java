@@ -2,6 +2,7 @@ package com.victoria.skinhairdresser;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.room.Room;
 
 
 import android.content.Intent;
@@ -57,8 +58,7 @@ public class ResultActivity extends AppCompatActivity {
         result_more_btn = findViewById(R.id.result_more_btn);
         real_result_graph = findViewById(R.id.real_result_graph);
 
-//        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "DB").build();
-//        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "DB").allowMainThreadQueries().build();
+        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "DB").allowMainThreadQueries().build();
         calendar = Calendar.getInstance();
 
 
