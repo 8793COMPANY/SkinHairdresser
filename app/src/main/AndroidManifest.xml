@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.victoria.skinhairdresser">
-
     <!-- 인터넷 권한 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-    <!-- BT 권한 -->
-    <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
-
-    <!-- 바이브 권한 -->
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- BT 권한 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- 바이브 권한 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="false"
@@ -24,10 +19,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.SkinHairdresser">
-        <activity android:name=".IntroActivity2">
-           </activity>
+        android:theme="@style/Theme.SkinHairdresser"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Thread.Test_MainActivity">
+        </activity>
+        <activity android:name=".IntroActivity2"></activity>
         <activity android:name=".LanguageActivity" />
         <activity android:name=".ManageActivity" />
         <activity android:name=".JoinActivity" />
@@ -36,30 +32,25 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".LoginActivity" >
-
-        </activity>
+            </intent-filter></activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".RecommendActivity" />
         <activity android:name=".ResultMoreActivity" />
-        <activity android:name=".ResultActivity" >
-
-        </activity>
+        <activity android:name=".ResultActivity"></activity>
         <activity android:name=".ConfirmActivity" />
         <activity android:name=".LetOutActivity" />
-        <activity android:name=".StartActivity" >
-        </activity>
-        <activity android:name=".SettingActivity" >
-        </activity>
+        <activity android:name=".StartActivity">
 
-        <activity android:name=".MainActivity"></activity>
+        </activity>
+        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".MainActivity" />
+
         <receiver
             android:name=".BroadcastReceiver.WifiReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
     </application>

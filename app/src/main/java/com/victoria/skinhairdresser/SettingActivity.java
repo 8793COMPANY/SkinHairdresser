@@ -56,7 +56,7 @@ public class SettingActivity extends AppCompatActivity {
 
     AppCompatButton back_btn;
     LinearLayout setting_edit_info;
-    View setting_go_start, setting_go_manage;
+    LinearLayout setting_go_start, setting_go_manage;
     Switch setting_letOut, setting_start, setting_login;
 
     // WIFI settings
