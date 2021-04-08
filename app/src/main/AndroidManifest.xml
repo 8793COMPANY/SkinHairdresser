@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.victoria.skinhairdresser">
+    package="com.corporation8793.skinhairdresser">
     <!-- 인터넷 권한 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -21,32 +21,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SkinHairdresser"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Thread.Test_MainActivity">
+        <activity android:name="com.corporation8793.skinhairdresser.Thread.Test_MainActivity">
         </activity>
-        <activity android:name=".IntroActivity2"></activity>
-        <activity android:name=".LanguageActivity" />
-        <activity android:name=".ManageActivity" />
-        <activity android:name=".JoinActivity" />
-        <activity android:name=".IntroActivity">
+        <activity android:name="com.corporation8793.skinhairdresser.IntroActivity2"></activity>
+        <activity android:name="com.corporation8793.skinhairdresser.LanguageActivity" />
+        <activity android:name="com.corporation8793.skinhairdresser.ManageActivity" />
+        <activity android:name="com.corporation8793.skinhairdresser.JoinActivity" />
+        <activity android:name="com.corporation8793.skinhairdresser.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter></activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".RecommendActivity" />
-        <activity android:name=".ResultMoreActivity" />
-        <activity android:name=".ResultActivity"></activity>
-        <activity android:name=".ConfirmActivity" />
-        <activity android:name=".LetOutActivity" />
-        <activity android:name=".StartActivity">
+        <activity android:name="com.corporation8793.skinhairdresser.LoginActivity"></activity>
+        <activity android:name="com.corporation8793.skinhairdresser.RecommendActivity" />
+        <activity android:name="com.corporation8793.skinhairdresser.ResultMoreActivity" />
+        <activity android:name="com.corporation8793.skinhairdresser.ResultActivity"></activity>
+        <activity android:name="com.corporation8793.skinhairdresser.ConfirmActivity" />
+        <activity android:name="com.corporation8793.skinhairdresser.LetOutActivity" />
+        <activity android:name="com.corporation8793.skinhairdresser.StartActivity">
 
         </activity>
-        <activity android:name=".SettingActivity"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.corporation8793.skinhairdresser.SettingActivity"></activity>
+        <activity android:name="com.corporation8793.skinhairdresser.MainActivity" />
 
         <receiver
-            android:name=".BroadcastReceiver.WifiReceiver"
+            android:name="com.corporation8793.skinhairdresser.BroadcastReceiver.WifiReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
