@@ -1,8 +1,15 @@
 package com.victoria.skinhairdresser;
 
+import androidx.annotation.ColorRes;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ClipDrawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,28 +40,42 @@ public class ResultMoreActivity extends AppCompatActivity {
         progress[2] = findViewById(R.id.sebum_secretion_progress);
         progress[3] = findViewById(R.id.wrinkle_progress);
         progress[4] = findViewById(R.id.pore_progress);
-        progress[5] = findViewById(R.id.sensitivity_progress);
-        progress[6] = findViewById(R.id.skin_tone_progress);
-        progress[7] = findViewById(R.id.pigmentation_progress);
+//        progress[5] = findViewById(R.id.sensitivity_progress);
+//        progress[6] = findViewById(R.id.skin_tone_progress);
+        progress[5] = findViewById(R.id.skin_tone_progress);
+        progress[6] = findViewById(R.id.pigmentation_progress);
+//        progress[7] = findViewById(R.id.pigmentation_progress);
 
         percentage[0] = findViewById(R.id.oil_text);
         percentage[1] = findViewById(R.id.moisture_text);
         percentage[2] = findViewById(R.id.sebum_secretion_text);
         percentage[3] = findViewById(R.id.wrinkle_text);
         percentage[4] = findViewById(R.id.pore_text);
-        percentage[5] = findViewById(R.id.sensitivity_text);
-        percentage[6] = findViewById(R.id.skin_tone_text);
-        percentage[7] = findViewById(R.id.pigmentation_text);
+//        percentage[5] = findViewById(R.id.sensitivity_text);
+//        percentage[6] = findViewById(R.id.skin_tone_text);
+        percentage[5] = findViewById(R.id.skin_tone_text);
+        percentage[6] = findViewById(R.id.pigmentation_text);
+//        percentage[7] = findViewById(R.id.pigmentation_text);
 
+//        setProgressBarColor(progress[0],R.color.limit_color);
+
+//        LayerDrawable layers = (LayerDrawable) getResources().getDrawable(R.drawable.progress);
+//
+//        GradientDrawable shape = (GradientDrawable) (layers.findDrawableByLayerId(R.id.progress));
+//        shape.setColor(getResources().getColor(android.R.color.black));
+
+//        LayerDrawable drawable = (LayerDrawable) ContextCompat.getDrawable(this,R.drawable.progress);
+//        drawable.setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
 
 
         Intent intent = getIntent();
         String [] values = progress_values[intent.getIntExtra("value",0)].split(" ");
 
-        for (int i=0; i <8; i++){
+        for (int i=0; i <7; i++){
             Log.e("list",Integer.parseInt(values[i])+"");
             progress[i].setProgress(Integer.parseInt(values[i]));
             percentage[i].setText(values[i]+"%");
+//            progress[i].getIndeterminateDrawable().setColorFilter(Color.parseColor("#bc8b6c"), PorterDuff.Mode.SRC);
         }
 
         finish_btn.setOnClickListener(new View.OnClickListener() {
@@ -72,5 +93,11 @@ public class ResultMoreActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void setProgressBarColor(ProgressBar progressBar, int newColor){
+        LayerDrawable ld =(LayerDrawable) progressBar.getProgressDrawable();
+        ClipDrawable dl = (ClipDrawable) ld.findDrawableByLayerId(R.id.progress);
+        dl.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
     }
 }

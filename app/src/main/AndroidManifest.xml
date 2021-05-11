@@ -20,9 +20,9 @@
 
     <application
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_main_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/app_main_icon_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.SkinHairdresser">
@@ -32,21 +32,28 @@
         <activity android:name=".ManageActivity" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".IntroActivity">
+
+        </activity>
+        <activity android:name=".LoginActivity" >
+
+        </activity>
+        <activity android:name=".RecommendActivity" >
+
+
+        </activity>
+        <activity android:name=".ResultMoreActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" >
-
-        </activity>
-        <activity android:name=".RecommendActivity" />
-        <activity android:name=".ResultMoreActivity" />
         <activity android:name=".ResultActivity" >
 
         </activity>
-        <activity android:name=".ConfirmActivity" />
+        <activity android:name=".ConfirmActivity" >
+
+        </activity>
         <activity android:name=".LetOutActivity" />
         <activity android:name=".StartActivity" >
         </activity>

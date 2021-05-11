@@ -13,6 +13,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.Network;
@@ -32,6 +33,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.victoria.skinhairdresser.BroadcastReceiver.WifiReceiver;
@@ -57,6 +59,7 @@ public class SettingActivity extends AppCompatActivity {
     AppCompatButton back_btn;
     LinearLayout setting_edit_info;
     View setting_go_start, setting_go_manage;
+    TextView my_name;
     Switch setting_letOut, setting_start, setting_login;
 
     // WIFI settings
@@ -76,6 +79,8 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        SharedPreferences sharedPreferences = getSharedPreferences("appData",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
         // 로컬
         back_btn = findViewById(R.id.back_btn);
@@ -85,6 +90,13 @@ public class SettingActivity extends AppCompatActivity {
         setting_letOut = findViewById(R.id.setting_letOut);
         setting_start = findViewById(R.id.setting_start);
         setting_login = findViewById(R.id.setting_login);
+        my_name = findViewById(R.id.my_name);
+
+        if (sharedPreferences.getBoolean("auto_login",false))
+            setting_login.setChecked(true);
+
+        if (!sharedPreferences.getString("first_name","혜진").equals("혜진"))
+            my_name.setText(sharedPreferences.getString("last_name","백")+sharedPreferences.getString("first_name","혜진"));
 
         // permissions
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
@@ -189,9 +201,13 @@ public class SettingActivity extends AppCompatActivity {
             if (isChecked) {
                 // ON
                 Toast.makeText(this, "자동 로그인 ON", Toast.LENGTH_SHORT).show();
+                editor.putBoolean("auto_login",true);
+                editor.commit();
             } else {
                 // OFF
                 Toast.makeText(this, "자동 로그인 OFF", Toast.LENGTH_SHORT).show();
+                editor.putBoolean("auto_login",false);
+                editor.commit();
             }
         });
 

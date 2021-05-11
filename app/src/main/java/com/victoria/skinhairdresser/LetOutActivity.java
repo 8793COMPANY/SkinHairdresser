@@ -9,6 +9,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -48,11 +49,16 @@ public class LetOutActivity extends AppCompatActivity {
 
     TextView main_text, detail_text;
     boolean check = false;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_let_out);
+
+        sharedPreferences = getSharedPreferences("appData",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
         finish_btn = findViewById(R.id.finish_btn);
         bluetooth_btn = findViewById(R.id.bluetooth_btn);
@@ -95,13 +101,29 @@ public class LetOutActivity extends AppCompatActivity {
 
 
                 if(connectedThread != null) {
-                    POOP_VALUE += "A" + "1" + " / ";
-                    POOP_VALUE += "B" + "1"  + " / ";
-                    POOP_VALUE += "C" + "1"  + " / ";
-                    POOP_VALUE += "D" + "1"  + " / ";
-                    POOP_VALUE += "E" + "1"  + " / ";
-                    POOP_VALUE += "F" + "1" ;
+                    int A = (int) (Math.random() *3) +1;
+                    int B = (int) (Math.random() *3) +1;
+                    int C = (int) (Math.random() *3) +1;
+                    int D = (int) (Math.random() *3) +1;
+                    int E = (int) (Math.random() *3) +1;
+                    int F = (int) (Math.random() *3) +1;
+
+                    editor.putInt("A",sharedPreferences.getInt("A",20)-A);
+                    editor.putInt("B",sharedPreferences.getInt("B",20)-B);
+                    editor.putInt("C",sharedPreferences.getInt("C",20)-C);
+                    editor.putInt("D",sharedPreferences.getInt("D",20)-D);
+                    editor.putInt("E",sharedPreferences.getInt("E",20)-E);
+                    editor.putInt("F",sharedPreferences.getInt("F",20)-F);
+
+                    POOP_VALUE += "A" + A + " / ";
+                    POOP_VALUE += "B" + B + " / ";
+                    POOP_VALUE += "C" + C + " / ";
+                    POOP_VALUE += "D" + D + " / ";
+                    POOP_VALUE += "E" + E + " / ";
+                    POOP_VALUE += "F" + F;
+
                     connectedThread.write(POOP_VALUE);
+                    editor.commit();
                     Log.e("poop",POOP_VALUE);
                     POOP_VALUE = "";
                 }
@@ -204,9 +226,6 @@ public class LetOutActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(),"연결중입니다...",Toast.LENGTH_SHORT).show();
                 dialog.cancel();
-
-
-
                 //Toast.makeText(getApplicationContext(), btArrayAdapter.getItem(position) + " try...", Toast.LENGTH_SHORT).show();
 
                 final String name = btArrayAdapter.getItem(position); // get name
@@ -241,6 +260,9 @@ public class LetOutActivity extends AppCompatActivity {
                         bluetooth_btn.setBackgroundResource(R.drawable.bluetooth_btn);
 
                         main_text.setText("토출기와 연결하는데 성공했습니다" + "\n토출기 : " + name);
+//                        editor.putBoolean("bluetooth",true);
+//                        editor.commit();
+
 //                        dialog.cancel();
                     }, 2000);
                 }

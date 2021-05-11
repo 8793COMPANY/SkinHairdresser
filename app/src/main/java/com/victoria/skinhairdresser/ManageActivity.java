@@ -50,7 +50,7 @@ public class ManageActivity extends AppCompatActivity {
         pg = new ArrayList<>();
         hole = new ArrayList<>();
         tone = new ArrayList<>();
-        sensitivity = new ArrayList<>();
+//        sensitivity = new ArrayList<>();
         fold = new ArrayList<>();
         color_washing = new ArrayList<>();
 
@@ -77,7 +77,7 @@ public class ManageActivity extends AppCompatActivity {
             pg.add(new Entry(count, m.oil));
             hole.add(new Entry(count, m.oil));
             tone.add(new Entry(count, m.oil));
-            sensitivity.add(new Entry(count, m.oil));
+//            sensitivity.add(new Entry(count, m.oil));
             fold.add(new Entry(count, m.oil));
             color_washing.add(new Entry(count, m.oil));
             count++;
@@ -94,7 +94,7 @@ public class ManageActivity extends AppCompatActivity {
         chart3 = findViewById(R.id.lineChart3);
         chart4 = findViewById(R.id.lineChart4);
         chart5 = findViewById(R.id.lineChart5);
-        chart6 = findViewById(R.id.lineChart6);
+//        chart6 = findViewById(R.id.lineChart6);
         chart7 = findViewById(R.id.lineChart7);
         chart8 = findViewById(R.id.lineChart8);
 
@@ -110,7 +110,7 @@ public class ManageActivity extends AppCompatActivity {
         settingChart(chart3,values);
         settingChart(chart4,values);
         settingChart(chart5,values);
-        settingChart(chart6,values);
+//        settingChart(chart6,values);
         settingChart(chart7,values);
         settingChart(chart8,values);
 

@@ -11,4 +11,6 @@
     <color name="background_brown">#FBF0E2</color>
     <color name="transparent">#00000000</color>
     <color name="limit_color">#f8e6d5</color>
+    <color name="above_twelve_times">#ccae9b</color>
+    <color name="middle_times">#c39c83</color>
 </resources>

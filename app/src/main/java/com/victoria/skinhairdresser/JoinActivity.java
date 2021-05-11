@@ -86,8 +86,8 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
             augment_view.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,0, (int) ((height/ 1280.0) * 36)));
             reduce_view.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,0, (int) ((height/ 1280.0) * 110)));
 
-            first_name.setText(sharedPreferences.getString("first_name","민경"));
-            last_name.setText(sharedPreferences.getString("last_name","김"));
+            first_name.setText(sharedPreferences.getString("first_name","혜진"));
+            last_name.setText(sharedPreferences.getString("last_name","백"));
             birth.setText(sharedPreferences.getString("birth","2000.03.21"));
             address.setText(sharedPreferences.getString("address","00시 00구 00동"));
             detail.setText(sharedPreferences.getString("detail","00아파트 00동 00호"));

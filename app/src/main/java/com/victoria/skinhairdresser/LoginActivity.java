@@ -36,7 +36,9 @@ public class LoginActivity extends AppCompatActivity {
         model_number = findViewById(R.id.model_num);
 
         SharedPreferences sharedPreferences = getSharedPreferences("appData",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         String model_num = sharedPreferences.getString("model_num","?");
+
 
         if (sharedPreferences.getBoolean("auto_login",false)){
             if (!model_num.equals("?"))
@@ -44,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             auto_login_btn.setBackgroundResource(R.drawable.auto_login_btn_on);
             auto_login_check = true;
         }
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+
 
 
         login_btn.setOnClickListener(new View.OnClickListener() {

@@ -6,7 +6,7 @@
             </shape>
     </item>
 
-    <item android:id="@android:id/progress">
+    <item android:id="@+id/vertical_progress">
         <clip android:clipOrientation="vertical" android:gravity="bottom">
                 <shape>
                     <solid android:color="@color/main_brown" />

@@ -62,428 +62,614 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="41"></LinearLayout>
+        android:layout_weight="65"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="58"
+        android:orientation="vertical"
+        android:weightSum="58">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="38"
+            android:orientation="horizontal"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="180"></View>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="158"
+                android:text="표준이하"
+                android:textColor="#bc8b6c"
+                android:gravity="center"></TextView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"></View>
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="158"
+                android:text="표준"
+                android:textColor="#bc8b6c"
+                android:gravity="center"></TextView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"></View>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="158"
+                android:text="표준이상"
+                android:textColor="#bc8b6c"
+                android:gravity="center"></TextView>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="60"></View>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:orientation="horizontal"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="180"></View>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="158"
+                android:background="#73bc8b6c"></View>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"></View>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="158"
+                android:background="#bc8b6c"></View>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"></View>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="158"
+                android:background="#ccbc8b6c"></View>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="60"></View>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"></View>
+
+    </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="828"
+        android:layout_weight="782"
         android:orientation="horizontal"
         android:weightSum="720">
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="70"></View>
+            android:layout_weight="60"></View>
 
 
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="580"
-            android:weightSum="828"
+            android:layout_weight="600"
+            android:weightSum="782"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="38"
-                android:orientation="horizontal"
-                android:weightSum="580">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="유분 : "
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
-
+                android:layout_weight="110"
+                android:weightSum="600"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/oil_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="00%"
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
+                    android:layout_weight="118"
+                    android:background="@color/middle_times"
+                    android:text="유 분"
+                    android:textColor="@color/white"
+                    android:gravity="center"></TextView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"></View>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="480"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:weightSum="110"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="36"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="400"
+                            android:weightSum="36"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical">
+
+                            <ProgressBar
+                                android:id="@+id/oil_progress"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="18"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:progressDrawable="@drawable/progress"
+                                android:max="100"></ProgressBar>
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/oil_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="55%"></TextView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="8"></View>
+                android:layout_weight="2"></View>
 
 
-            <ProgressBar
-                android:id="@+id/oil_progress"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="40"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"
-                android:max="100"></ProgressBar>
+                android:layout_weight="110"
+                android:weightSum="600"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="118"
+                    android:background="@color/middle_times"
+                    android:text="수 분"
+                    android:textColor="@color/white"
+                    android:gravity="center"></TextView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"></View>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="480"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:weightSum="110"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="18"
+                        android:orientation="horizontal">
+
+                        <ProgressBar
+                            android:id="@+id/moisture_progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/progress"
+                            android:max="100"></ProgressBar>
+
+                        <TextView
+                            android:id="@+id/moisture_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="55%"></TextView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="20"></View>
+                android:layout_weight="2"></View>
+
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="38"
-                android:orientation="horizontal"
-                android:weightSum="580">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="수분 : "
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
-
+                android:layout_weight="110"
+                android:weightSum="600"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/moisture_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="00%"
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
+                    android:layout_weight="118"
+                    android:background="@color/middle_times"
+                    android:text="피지분비"
+                    android:textColor="@color/white"
+                    android:gravity="center"></TextView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"></View>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="480"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:weightSum="110"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="18"
+                        android:orientation="horizontal">
+
+                        <ProgressBar
+                            android:id="@+id/sebum_secretion_progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/progress"
+                            android:max="100"></ProgressBar>
+
+                        <TextView
+                            android:id="@+id/sebum_secretion_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="55%"></TextView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8"></LinearLayout>
-
-
-            <ProgressBar
-                android:id="@+id/moisture_progress"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"
-                android:max="100"></ProgressBar>
-
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="20"></View>
+                android:layout_weight="2"></View>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="38"
-                android:orientation="horizontal"
-                android:weightSum="580">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="피지분비 : "
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
-
+                android:layout_weight="110"
+                android:weightSum="600"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/sebum_secretion_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="00%"
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
+                    android:layout_weight="118"
+                    android:background="@color/middle_times"
+                    android:text="주 름"
+                    android:textColor="@color/white"
+                    android:gravity="center"></TextView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"></View>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="480"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:weightSum="110"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="18"
+                        android:orientation="horizontal">
+
+                        <ProgressBar
+                            android:id="@+id/wrinkle_progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/progress"
+                            android:max="100"></ProgressBar>
+
+                        <TextView
+                            android:id="@+id/wrinkle_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="55%"></TextView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8"></LinearLayout>
-
-
-            <ProgressBar
-                android:id="@+id/sebum_secretion_progress"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"
-                android:max="100"></ProgressBar>
-
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="20"></View>
+                android:layout_weight="2"></View>
+
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="38"
-                android:orientation="horizontal"
-                android:weightSum="580">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="주름 : "
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
-
+                android:layout_weight="110"
+                android:weightSum="600"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/wrinkle_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="00%"
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
+                    android:layout_weight="118"
+                    android:background="@color/middle_times"
+                    android:text="모 공"
+                    android:textColor="@color/white"
+                    android:gravity="center"></TextView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"></View>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="480"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:weightSum="110"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="18"
+                        android:orientation="horizontal">
+
+                        <ProgressBar
+                            android:id="@+id/pore_progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/progress"
+                            android:max="100"></ProgressBar>
+
+                        <TextView
+                            android:id="@+id/pore_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="55%"></TextView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8"></LinearLayout>
-
-
-            <ProgressBar
-                android:id="@+id/wrinkle_progress"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"
-                android:max="100"></ProgressBar>
-
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="20"></View>
+                android:layout_weight="2"></View>
+
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="38"
-                android:orientation="horizontal"
-                android:weightSum="580">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="모공 : "
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
-
+                android:layout_weight="110"
+                android:weightSum="600"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/pore_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="00%"
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
+                    android:layout_weight="118"
+                    android:background="@color/middle_times"
+                    android:text="피부톤"
+                    android:textColor="@color/white"
+                    android:gravity="center"></TextView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"></View>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="480"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:weightSum="110"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="18"
+                        android:orientation="horizontal">
+
+                        <ProgressBar
+                            android:id="@+id/skin_tone_progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/progress"
+                            android:max="100"></ProgressBar>
+
+                        <TextView
+                            android:id="@+id/skin_tone_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="55%"></TextView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8"></LinearLayout>
-
-
-            <ProgressBar
-                android:id="@+id/pore_progress"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"
-                android:max="100"></ProgressBar>
-
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="20"></View>
+                android:layout_weight="2"></View>
+
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="38"
-                android:orientation="horizontal"
-                android:weightSum="580">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="민감도 : "
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
-
+                android:layout_weight="110"
+                android:weightSum="600"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/sensitivity_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="00%"
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
+                    android:layout_weight="118"
+                    android:background="@color/middle_times"
+                    android:text="색소침착"
+                    android:textColor="@color/white"
+                    android:gravity="center"></TextView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"></View>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="480"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:weightSum="110"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="18"
+                        android:orientation="horizontal">
+
+                        <ProgressBar
+                            android:id="@+id/pigmentation_progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/progress"
+                            android:max="100"></ProgressBar>
+
+                        <TextView
+                            android:id="@+id/pigmentation_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="55%"></TextView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8"></LinearLayout>
-
-
-            <ProgressBar
-                android:id="@+id/sensitivity_progress"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"
-                android:max="100"></ProgressBar>
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="20"></View>
 
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="38"
-                android:orientation="horizontal"
-                android:weightSum="580">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="피부톤 : "
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
-
-
-                <TextView
-                    android:id="@+id/skin_tone_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="00%"
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8"></LinearLayout>
-
-
-            <ProgressBar
-                android:id="@+id/skin_tone_progress"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"
-                android:max="100"></ProgressBar>
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="20"></View>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="38"
-                android:orientation="horizontal"
-                android:weightSum="580">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="색소침착 : "
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
-
-
-                <TextView
-                    android:id="@+id/pigmentation_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="00%"
-                    android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    ></TextView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8"></LinearLayout>
-
-
-            <ProgressBar
-                android:id="@+id/pigmentation_progress"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progressDrawable="@drawable/progress"
-                android:max="100"></ProgressBar>
         </LinearLayout>
 
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="70"></View>
+            android:layout_weight="60"></View>
 
 
     </LinearLayout>
@@ -494,7 +680,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="120"></LinearLayout>
+        android:layout_weight="84"></LinearLayout>
 
 
     <LinearLayout

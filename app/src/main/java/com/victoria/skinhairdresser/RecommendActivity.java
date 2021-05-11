@@ -1,10 +1,13 @@
 package com.victoria.skinhairdresser;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Point;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -12,8 +15,10 @@ import android.widget.RelativeLayout;
 
 public class RecommendActivity extends AppCompatActivity {
     //개인 맞춤 성분 추천
-    Button test,test2;
+    Button finish_btn;
     LinearLayout top_linear,middle_linear;
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +28,8 @@ public class RecommendActivity extends AppCompatActivity {
         display.getRealSize(size);
         int height = size.y;
 
+
+        finish_btn = findViewById(R.id.finish_btn);
         top_linear = findViewById(R.id.top_linear);
         middle_linear = findViewById(R.id.middle_linear);
 
@@ -38,12 +45,12 @@ public class RecommendActivity extends AppCompatActivity {
 
         middle_linear.setLayoutParams(params2);
 
-//        top_linear.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,0, (int) ((height/ 1280.0) * 120)));
-
-//        test = findViewById(R.id.test);
-//        test2 = findViewById(R.id.test2);
-//        test.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,0, (int) ((height/ 1280.0) * 36)));
-//        test2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,0, (int) ((height/ 1280.0) * 36)));
+        finish_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 }

@@ -39,16 +39,17 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="72"
-                android:background="@drawable/finish_btn"></androidx.appcompat.widget.AppCompatButton>
+                android:background="@color/transparent"></androidx.appcompat.widget.AppCompatButton>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="496"
-                android:text="개인 맞춤 성분 추천"
                 android:textSize="20dp"
+                android:text="전용 카트리지 화장품 추천"
                 android:textColor="@color/main_brown"
-                android:gravity="center"></TextView>
+                android:gravity="center"
+                android:background="@color/background_brown"></TextView>
 
             <View
                 android:layout_width="0dp"
@@ -75,8 +76,7 @@
         android:layout_height="0dp"
         android:layout_weight="36"
         android:gravity="center"
-        android:textColor="@color/main_brown"
-        android:text="활성화된 요소를 드래그하여 채워주세요"></TextView>
+        android:textColor="@color/main_brown"></TextView>
 
 
     <LinearLayout
@@ -110,49 +110,49 @@
                 android:weightSum="320"
                 android:layout_marginTop="8dp">
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="45"></View>
+<!--                <View-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="45"></View>-->
 
-                <Button
-                    android:id="@+id/test"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="108"
-                    android:background="@drawable/hhh"
-                    android:text="Green\n  Line"
-                    android:textSize="10dp"
-                    android:gravity="top"
-                    android:textColor="@color/white"
-                    android:rotation="-30"
-                    app:backgroundTint="#f8e6d5"></Button>
-
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="17"></View>
+<!--                <Button-->
+<!--                    android:id="@+id/test"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="108"-->
+<!--                    android:background="@drawable/hhh"-->
+<!--                    android:text="Green\n  Line"-->
+<!--                    android:textSize="10dp"-->
+<!--                    android:gravity="top"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:rotation="-30"-->
+<!--                    app:backgroundTint="#f8e6d5"></Button>-->
 
 
-                <Button
-                    android:id="@+id/test2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="108"
-                    android:background="@drawable/hhh"
-                    android:text="Green\n  Line"
-                    android:textSize="10dp"
-                    android:gravity="top"
-                    android:textColor="@color/white"
-                    android:rotation="30"
-                    app:backgroundTint="@color/main_brown"></Button>
+<!--                <View-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="17"></View>-->
 
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="45"></View>
+<!--                <Button-->
+<!--                    android:id="@+id/test2"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    android:layout_weight="108"-->
+<!--                    android:background="@drawable/hhh"-->
+<!--                    android:rotation="30"-->
+<!--                    android:text="Green\n  Line"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="10dp"-->
+<!--                    app:backgroundTint="#f8e6d5"></Button>-->
+
+<!--                <View-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="45"></View>-->
 
             </LinearLayout>
 
@@ -164,45 +164,44 @@
                 android:weightSum="320"
                 android:layout_marginTop="55dp">
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="16"></View>
+<!--                <View-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="16"></View>-->
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="116"
-                    android:background="@drawable/hhh"
-                    android:text="Green\n  Line"
-                    android:textSize="10dp"
-                    android:gravity="top"
-                    android:textColor="@color/white"
-                    app:backgroundTint="#f8e6d5"></Button>
-
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="56"></View>
+<!--                <Button-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="116"-->
+<!--                    android:background="@drawable/hhh"-->
+<!--                    android:text="Green\n  Line"-->
+<!--                    android:textSize="10dp"-->
+<!--                    android:rotation="-91"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    app:backgroundTint="@color/background_brown"></Button>-->
 
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="116"
-                    android:background="@drawable/test_img"
-                    android:text="Green\n  Line"
-                    android:textSize="10dp"
-                    android:gravity="top"
-                    android:textColor="@color/white"
-                    app:backgroundTint="@color/main_brown"></Button>
+<!--                <View-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="56"></View>-->
 
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="16"></View>
+<!--                <Button-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="116"-->
+<!--                    android:background="@drawable/test_img"-->
+<!--                    android:text="Green\n  Line"-->
+<!--                    android:textSize="10dp"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    app:backgroundTint="@color/main_brown"></Button>-->
+
+
+<!--                <View-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="16"></View>-->
 
             </LinearLayout>
 
@@ -235,7 +234,8 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="580"></androidx.appcompat.widget.AppCompatButton>
+            android:layout_weight="580"
+            android:background="@color/transparent"></androidx.appcompat.widget.AppCompatButton>
 
 
 
