@@ -82,7 +82,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="144.5"/>
 
-            <com.victoria.skinhairdresser.cw.CustomWebView
+            <com.corporation8793.skinhairdresser.cw.CustomWebView
                 android:id="@+id/wv"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

@@ -208,6 +208,7 @@
         android:layout_weight="36"/>
 
     <LinearLayout
+        android:id="@+id/setting_go_start"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="48"
@@ -221,7 +222,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="116"
+            android:layout_weight="328"
             android:textAlignment="textStart"
             android:gravity="center"
             android:textSize="14dp"
@@ -232,10 +233,9 @@
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="352"/>
+            android:layout_weight="140"/>
 
         <View
-            android:id="@+id/setting_go_start"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="48"
@@ -254,6 +254,7 @@
         android:layout_weight="36"/>
 
     <LinearLayout
+        android:id="@+id/setting_go_manage"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="48"
@@ -267,7 +268,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="178"
+            android:layout_weight="328"
             android:textAlignment="textStart"
             android:gravity="center"
             android:textSize="14dp"
@@ -278,10 +279,9 @@
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="290"/>
+            android:layout_weight="140"/>
 
         <View
-            android:id="@+id/setting_go_manage"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="48"

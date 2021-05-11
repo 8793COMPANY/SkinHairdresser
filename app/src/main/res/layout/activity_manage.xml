@@ -124,11 +124,67 @@
 
                     </LinearLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/lineChart"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        ></com.github.mikephil.charting.charts.LineChart>
+                        android:background="@drawable/manage_graph_background"
+                        android:weightSum="600"
+                        android:orientation="horizontal"
+                        >
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/lineChart"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="548"
+                            ></com.github.mikephil.charting.charts.LineChart>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="52"
+                            android:orientation="vertical"
+                            android:weightSum="140">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="과다"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="정상"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"
+                                ></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="부족"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/main_brown"></TextView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
 
 
                     <View
@@ -138,61 +194,77 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="12dp"
-                        android:background="@drawable/manage_textview_design"
                         android:orientation="horizontal"
                         android:weightSum="600">
 
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="550"
+                            android:background="@drawable/manage_textview_design">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="112"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="1주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="2주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="3주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="4주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                        </LinearLayout>
+
+
+
+
+
                         <View
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="130"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="1주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="120"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="2주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="3주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="4주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
+                            android:layout_weight="50"></View>
 
 
                     </LinearLayout>
@@ -230,11 +302,69 @@
 
                     </LinearLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/lineChart2"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        ></com.github.mikephil.charting.charts.LineChart>
+                        android:background="@drawable/manage_graph_background"
+                        android:weightSum="600"
+                        android:orientation="horizontal"
+                        >
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/lineChart2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="548"
+                            ></com.github.mikephil.charting.charts.LineChart>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="52"
+                            android:orientation="vertical"
+                            android:weightSum="140">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="과다"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="정상"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"
+                                ></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="부족"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/main_brown"></TextView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
 
 
                     <View
@@ -244,62 +374,77 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="12dp"
-                        android:background="@drawable/manage_textview_design"
                         android:orientation="horizontal"
                         android:weightSum="600">
 
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="550"
+                            android:background="@drawable/manage_textview_design">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="112"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="1주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="2주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="3주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="4주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                        </LinearLayout>
+
+
+
+
+
                         <View
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="130"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="1주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="120"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="2주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="3주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="4주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
+                            android:layout_weight="50"></View>
 
                     </LinearLayout>
 
@@ -337,11 +482,70 @@
 
                     </LinearLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/lineChart3"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        ></com.github.mikephil.charting.charts.LineChart>
+                        android:background="@drawable/manage_graph_background"
+                        android:weightSum="600"
+                        android:orientation="horizontal"
+                        >
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/lineChart3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="548"
+                            ></com.github.mikephil.charting.charts.LineChart>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="52"
+                            android:orientation="vertical"
+                            android:weightSum="140">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="과다"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="정상"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"
+                                ></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="부족"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/main_brown"></TextView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
 
 
                     <View
@@ -351,61 +555,77 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="12dp"
-                        android:background="@drawable/manage_textview_design"
                         android:orientation="horizontal"
                         android:weightSum="600">
 
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="550"
+                            android:background="@drawable/manage_textview_design">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="112"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="1주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="2주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="3주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="4주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                        </LinearLayout>
+
+
+
+
+
                         <View
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="130"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="1주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="120"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="2주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="3주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="4주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
+                            android:layout_weight="50"></View>
 
 
                     </LinearLayout>
@@ -445,11 +665,68 @@
 
                     </LinearLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/lineChart4"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        ></com.github.mikephil.charting.charts.LineChart>
+                        android:background="@drawable/manage_graph_background"
+                        android:weightSum="600"
+                        android:orientation="horizontal"
+                        >
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/lineChart4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="548"
+                            ></com.github.mikephil.charting.charts.LineChart>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="52"
+                            android:orientation="vertical"
+                            android:weightSum="140">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="과다"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="정상"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"
+                                ></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="부족"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/main_brown"></TextView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
 
 
                     <View
@@ -459,61 +736,75 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="12dp"
-                        android:background="@drawable/manage_textview_design"
                         android:orientation="horizontal"
                         android:weightSum="600">
 
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="550"
+                            android:background="@drawable/manage_textview_design">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="112"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="1주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="2주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="3주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="4주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                        </LinearLayout>
+
+
+
                         <View
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="130"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="1주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="120"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="2주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="3주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="4주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
+                            android:layout_weight="50"></View>
 
 
                     </LinearLayout>
@@ -554,11 +845,68 @@
 
                     </LinearLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/lineChart5"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        ></com.github.mikephil.charting.charts.LineChart>
+                        android:background="@drawable/manage_graph_background"
+                        android:weightSum="600"
+                        android:orientation="horizontal"
+                        >
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/lineChart5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="548"
+                            ></com.github.mikephil.charting.charts.LineChart>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="52"
+                            android:orientation="vertical"
+                            android:weightSum="140">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="과다"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="정상"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"
+                                ></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="부족"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/main_brown"></TextView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
 
 
                     <View
@@ -568,61 +916,77 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="12dp"
-                        android:background="@drawable/manage_textview_design"
                         android:orientation="horizontal"
                         android:weightSum="600">
 
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="550"
+                            android:background="@drawable/manage_textview_design">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="112"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="1주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="2주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="3주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="4주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                        </LinearLayout>
+
+
+
+
+
                         <View
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="130"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="1주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="120"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="2주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="3주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="4주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
+                            android:layout_weight="50"></View>
 
 
                     </LinearLayout>
@@ -771,11 +1135,68 @@
 
                     </LinearLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/lineChart7"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        ></com.github.mikephil.charting.charts.LineChart>
+                        android:background="@drawable/manage_graph_background"
+                        android:weightSum="600"
+                        android:orientation="horizontal"
+                        >
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/lineChart7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="548"
+                            ></com.github.mikephil.charting.charts.LineChart>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="52"
+                            android:orientation="vertical"
+                            android:weightSum="140">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="과다"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="정상"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"
+                                ></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="부족"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/main_brown"></TextView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
 
 
                     <View
@@ -785,61 +1206,77 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="12dp"
-                        android:background="@drawable/manage_textview_design"
                         android:orientation="horizontal"
                         android:weightSum="600">
 
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="550"
+                            android:background="@drawable/manage_textview_design">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="112"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="1주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="2주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="3주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="4주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                        </LinearLayout>
+
+
+
+
+
                         <View
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="130"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="1주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="120"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="2주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="3주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="4주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
+                            android:layout_weight="50"></View>
 
 
                     </LinearLayout>
@@ -880,11 +1317,68 @@
 
                     </LinearLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/lineChart8"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        ></com.github.mikephil.charting.charts.LineChart>
+                        android:background="@drawable/manage_graph_background"
+                        android:weightSum="600"
+                        android:orientation="horizontal"
+                        >
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/lineChart8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="548"
+                            ></com.github.mikephil.charting.charts.LineChart>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="52"
+                            android:orientation="vertical"
+                            android:weightSum="140">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="과다"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="정상"
+                                android:gravity="center"
+                                android:textSize="10dp"
+                                android:textColor="@color/main_brown"
+                                ></TextView>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"></View>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="44"
+                                android:text="부족"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/main_brown"></TextView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
 
 
                     <View
@@ -894,61 +1388,77 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="12dp"
-                        android:background="@drawable/manage_textview_design"
                         android:orientation="horizontal"
                         android:weightSum="600">
 
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="550"
+                            android:background="@drawable/manage_textview_design">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="112"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="1주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="2주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="3주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="110"></View>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="25"
+                                android:text="4주"
+                                android:textColor="@color/main_brown"
+                                android:textSize="8dp"></TextView>
+
+                        </LinearLayout>
+
+
+
+
+
                         <View
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="130"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="1주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="120"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="2주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="3주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="125"></View>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="25"
-                            android:text="4주"
-                            android:textColor="@color/main_brown"
-                            android:textSize="8dp"></TextView>
+                            android:layout_weight="50"></View>
 
 
                     </LinearLayout>

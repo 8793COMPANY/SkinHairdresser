@@ -248,27 +248,26 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="400"
+                            android:layout_weight="600"
                             android:weightSum="36"
                             android:orientation="vertical"
                             android:gravity="center_vertical">
 
-                            <ProgressBar
+                            <com.daimajia.numberprogressbar.NumberProgressBar
                                 android:id="@+id/oil_progress"
                                 android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="18"
-                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                                android:progressDrawable="@drawable/progress"
-                                android:max="100"></ProgressBar>
+                                android:layout_height="match_parent"
+                                style="@style/NumberProgressBar_Default"
+                                app:progress_max="100"
+                                app:progress_current="80"
+                                app:progress_reached_bar_height="10dp"
+                                app:progress_reached_color="#bc8b6c"
+                                app:progress_text_color="#bc8b6c"
+                                app:progress_text_size="15dp"
+                                app:progress_text_offset="6dp"
+                                app:progress_unreached_color="@color/transparent"></com.daimajia.numberprogressbar.NumberProgressBar>
                         </LinearLayout>
 
-
-                        <TextView
-                            android:id="@+id/oil_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="55%"></TextView>
 
                     </LinearLayout>
 
@@ -315,26 +314,36 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="18"
+                        android:layout_weight="36"
                         android:orientation="horizontal">
-
-                        <ProgressBar
-                            android:id="@+id/moisture_progress"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                            android:progressDrawable="@drawable/progress"
-                            android:max="100"></ProgressBar>
+                            android:layout_weight="600"
+                            android:weightSum="36"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/moisture_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="55%"></TextView>
+                            <com.daimajia.numberprogressbar.NumberProgressBar
+                                android:id="@+id/moisture_progress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                style="@style/NumberProgressBar_Default"
+                                app:progress_max="100"
+                                app:progress_current="80"
+                                app:progress_reached_bar_height="10dp"
+                                app:progress_reached_color="#bc8b6c"
+                                app:progress_text_color="#bc8b6c"
+                                app:progress_text_size="15dp"
+                                app:progress_text_offset="6dp"
+                                app:progress_unreached_color="@color/transparent"></com.daimajia.numberprogressbar.NumberProgressBar>
+                        </LinearLayout>
+
 
                     </LinearLayout>
+
 
 
                 </LinearLayout>
@@ -378,27 +387,38 @@
                     android:weightSum="110"
                     android:orientation="vertical">
 
+
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="18"
+                        android:layout_weight="36"
                         android:orientation="horizontal">
-
-                        <ProgressBar
-                            android:id="@+id/sebum_secretion_progress"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                            android:progressDrawable="@drawable/progress"
-                            android:max="100"></ProgressBar>
+                            android:layout_weight="600"
+                            android:weightSum="36"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/sebum_secretion_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="55%"></TextView>
+                            <com.daimajia.numberprogressbar.NumberProgressBar
+                                android:id="@+id/sebum_secretion_progress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                style="@style/NumberProgressBar_Default"
+                                app:progress_max="100"
+                                app:progress_current="80"
+                                app:progress_reached_bar_height="10dp"
+                                app:progress_reached_color="#bc8b6c"
+                                app:progress_text_color="#bc8b6c"
+                                app:progress_text_size="15dp"
+                                app:progress_text_offset="6dp"
+                                app:progress_unreached_color="@color/transparent"></com.daimajia.numberprogressbar.NumberProgressBar>
+                        </LinearLayout>
+
 
                     </LinearLayout>
+
 
 
                 </LinearLayout>
@@ -442,26 +462,36 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="18"
+                        android:layout_weight="36"
                         android:orientation="horizontal">
-
-                        <ProgressBar
-                            android:id="@+id/wrinkle_progress"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                            android:progressDrawable="@drawable/progress"
-                            android:max="100"></ProgressBar>
+                            android:layout_weight="600"
+                            android:weightSum="36"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/wrinkle_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="55%"></TextView>
+                            <com.daimajia.numberprogressbar.NumberProgressBar
+                                android:id="@+id/wrinkle_progress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                style="@style/NumberProgressBar_Default"
+                                app:progress_max="100"
+                                app:progress_current="80"
+                                app:progress_reached_bar_height="10dp"
+                                app:progress_reached_color="#bc8b6c"
+                                app:progress_text_color="#bc8b6c"
+                                app:progress_text_size="15dp"
+                                app:progress_text_offset="6dp"
+                                app:progress_unreached_color="@color/transparent"></com.daimajia.numberprogressbar.NumberProgressBar>
+                        </LinearLayout>
+
 
                     </LinearLayout>
+
 
 
                 </LinearLayout>
@@ -505,27 +535,38 @@
                     android:weightSum="110"
                     android:orientation="vertical">
 
+
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="18"
+                        android:layout_weight="36"
                         android:orientation="horizontal">
-
-                        <ProgressBar
-                            android:id="@+id/pore_progress"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                            android:progressDrawable="@drawable/progress"
-                            android:max="100"></ProgressBar>
+                            android:layout_weight="600"
+                            android:weightSum="36"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/pore_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="55%"></TextView>
+                            <com.daimajia.numberprogressbar.NumberProgressBar
+                                android:id="@+id/pore_progress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                style="@style/NumberProgressBar_Default"
+                                app:progress_max="100"
+                                app:progress_current="80"
+                                app:progress_reached_bar_height="10dp"
+                                app:progress_reached_color="#bc8b6c"
+                                app:progress_text_color="#bc8b6c"
+                                app:progress_text_size="15dp"
+                                app:progress_text_offset="6dp"
+                                app:progress_unreached_color="@color/transparent"></com.daimajia.numberprogressbar.NumberProgressBar>
+                        </LinearLayout>
+
 
                     </LinearLayout>
+
 
 
                 </LinearLayout>
@@ -570,26 +611,36 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="18"
+                        android:layout_weight="36"
                         android:orientation="horizontal">
-
-                        <ProgressBar
-                            android:id="@+id/skin_tone_progress"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                            android:progressDrawable="@drawable/progress"
-                            android:max="100"></ProgressBar>
+                            android:layout_weight="600"
+                            android:weightSum="36"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/skin_tone_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="55%"></TextView>
+                            <com.daimajia.numberprogressbar.NumberProgressBar
+                                android:id="@+id/skin_tone_progress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                style="@style/NumberProgressBar_Default"
+                                app:progress_max="100"
+                                app:progress_current="80"
+                                app:progress_reached_bar_height="10dp"
+                                app:progress_reached_color="#bc8b6c"
+                                app:progress_text_color="#bc8b6c"
+                                app:progress_text_size="15dp"
+                                app:progress_text_offset="6dp"
+                                app:progress_unreached_color="@color/transparent"></com.daimajia.numberprogressbar.NumberProgressBar>
+                        </LinearLayout>
+
 
                     </LinearLayout>
+
 
 
                 </LinearLayout>
@@ -633,25 +684,35 @@
                     android:weightSum="110"
                     android:orientation="vertical">
 
+
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="18"
+                        android:layout_weight="36"
                         android:orientation="horizontal">
-
-                        <ProgressBar
-                            android:id="@+id/pigmentation_progress"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                            android:progressDrawable="@drawable/progress"
-                            android:max="100"></ProgressBar>
+                            android:layout_weight="600"
+                            android:weightSum="36"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/pigmentation_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="55%"></TextView>
+                            <com.daimajia.numberprogressbar.NumberProgressBar
+                                android:id="@+id/pigmentation_progress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                style="@style/NumberProgressBar_Default"
+                                app:progress_max="100"
+                                app:progress_current="80"
+                                app:progress_reached_bar_height="10dp"
+                                app:progress_reached_color="#bc8b6c"
+                                app:progress_text_color="#bc8b6c"
+                                app:progress_text_size="15dp"
+                                app:progress_text_offset="6dp"
+                                app:progress_unreached_color="@color/transparent"></com.daimajia.numberprogressbar.NumberProgressBar>
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
