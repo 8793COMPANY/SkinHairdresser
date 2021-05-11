@@ -34,9 +34,6 @@ public class Measurement {
     @ColumnInfo(name = "color_washing")
     public int color_washing;
 
-    @ColumnInfo(name = "sensitive")
-    public int sensitivity;
-
     @ColumnInfo(name = "fold")
     public int fold;
 
@@ -44,7 +41,7 @@ public class Measurement {
     public int oil;
 
     public Measurement(int year, int month, int day,
-                       int pg, int moisture, int hole, int tone, int color_washing, int sensitivity, int fold, int oil) {
+                       int pg, int moisture, int hole, int tone, int color_washing, int fold, int oil) {
         this.year = year;
         this.month = month;
         this.day = day;
@@ -53,7 +50,6 @@ public class Measurement {
         this.hole = hole;
         this.tone = tone;
         this.color_washing = color_washing;
-        this.sensitivity = sensitivity;
         this.fold = fold;
         this.oil = oil;
     }
@@ -94,15 +90,39 @@ public class Measurement {
         return color_washing;
     }
 
-    public int getSensitivity() {
-        return sensitivity;
-    }
-
     public int getFold() {
         return fold;
     }
 
     public int getOil() {
         return oil;
+    }
+
+    public void setPg(int pg) {
+        this.pg = pg;
+    }
+
+    public void setMoisture(int moisture) {
+        this.moisture = moisture;
+    }
+
+    public void setHole(int hole) {
+        this.hole = hole;
+    }
+
+    public void setTone(int tone) {
+        this.tone = tone;
+    }
+
+    public void setColor_washing(int color_washing) {
+        this.color_washing = color_washing;
+    }
+
+    public void setFold(int fold) {
+        this.fold = fold;
+    }
+
+    public void setOil(int oil) {
+        this.oil = oil;
     }
 }

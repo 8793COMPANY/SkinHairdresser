@@ -38,7 +38,7 @@ public class ResultActivity extends AppCompatActivity {
 
     // 측정값 저장 배열
     int[] values = new int[]{
-         0, 0, 0, 0, 0, 0, 0, 0
+         0, 0, 0, 0, 0, 0, 0
     };
 
     AppDatabase db;
@@ -82,12 +82,10 @@ public class ResultActivity extends AppCompatActivity {
                 values[3],
                 // color_washing
                 values[4],
-                // sensitivity
-                values[5],
                 // fold
-                values[6],
+                values[5],
                 // oil
-                values[7]
+                values[6]
         );
 
         // 오늘 날짜, DB (오늘)날짜 비교해서 있으면 DB UPDATE
@@ -95,7 +93,26 @@ public class ResultActivity extends AppCompatActivity {
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH) + 1,
                 calendar.get(Calendar.DAY_OF_MONTH)) != null) {
-            db.measurementDao().update(measurement);
+
+            Log.e("DB", "-- 머리 업데이트 확인? --");
+            Log.e("DB", "cid : " + measurement.cid + " , " + "year : " + measurement.year + " , " + "month : " + measurement.month + " , " + "day : " + measurement.day + " , "
+                    + "pg : " + measurement.pg + " , " + "moisture : " + measurement.moisture + " , " + "hole : " + measurement.hole + " , " + "tone : " + measurement.tone + " , "
+                    + "color washing : " + measurement.color_washing + " , " + "fold : " + measurement.fold + " , " + "oil : " + measurement.oil);
+
+            Measurement LM = db.measurementDao().findByYmd(
+                    calendar.get(Calendar.YEAR),
+                    calendar.get(Calendar.MONTH) + 1,
+                    calendar.get(Calendar.DAY_OF_MONTH));
+
+            LM.setPg(values[0]);
+            LM.setMoisture(values[1]);
+            LM.setHole(values[2]);
+            LM.setTone(values[3]);
+            LM.setColor_washing(values[4]);
+            LM.setFold(values[5]);
+            LM.setOil(values[6]);
+
+            db.measurementDao().update(LM);
         } else {
             // 없으면 DB INSERT
             db.measurementDao().insertAll(measurement);
@@ -111,7 +128,6 @@ public class ResultActivity extends AppCompatActivity {
         entries.add(new RadarEntry(values[4], 0));
         entries.add(new RadarEntry(values[5], 0));
         entries.add(new RadarEntry(values[6], 0));
-        entries.add(new RadarEntry(values[7], 0));
 
         // 레이더 그래프 초기화 (RadarDataSet - 밸류 컨트롤러)
         // RadarDataSet - 데이터 스타일링
@@ -127,7 +143,7 @@ public class ResultActivity extends AppCompatActivity {
         // * RadarData - 데이터 라벨링 Start
         RadarData radarData = new RadarData(radarDataSet);
         String[] strings = new String[]{
-                "피지분비", "수분", "모공", "피부톤", "색소침착", "민감도", "주름", "유분", ""
+                "피지분비", "수분", "모공", "피부톤", "색소침착", "주름", "유분", ""
         };
         ValueFormatter valueFormatter = new ValueFormatter() {
             @Override
@@ -172,7 +188,7 @@ public class ResultActivity extends AppCompatActivity {
         for (Measurement m : all) {
             Log.e("DB", "cid : " + m.cid + " , " + "year : " + m.year + " , " + "month : " + m.month + " , " + "day : " + m.day + " , "
                     + "pg : " + m.pg + " , " + "moisture : " + m.moisture + " , " + "hole : " + m.hole + " , " + "tone : " + m.tone + " , "
-                    + "sensitivity : " + m.sensitivity + " , " + "fold : " + m.fold + " , " + "oil : " + m.oil);
+                    + "color washing : " + m.color_washing + " , " + "fold : " + m.fold + " , " + "oil : " + m.oil);
         }
 
 

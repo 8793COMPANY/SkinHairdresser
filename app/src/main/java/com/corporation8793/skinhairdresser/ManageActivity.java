@@ -81,7 +81,7 @@ public class ManageActivity extends AppCompatActivity {
 
             Log.e("DB", "cid : " + m.cid + " , " + "year : " + m.year + " , " + "month : " + m.month + " , " + "day : " + m.day + " , "
                     + "pg : " + m.pg + " , " + "moisture : " + m.moisture + " , " + "hole : " + m.hole + " , " + "tone : " + m.tone + " , "
-                    + "sensitivity : " + m.sensitivity + " , " + "fold : " + m.fold + " , " + "oil : " + m.oil);
+                    + "fold : " + m.fold + " , " + "oil : " + m.oil);
         }
 
         finish_btn = findViewById(R.id.finish_btn);

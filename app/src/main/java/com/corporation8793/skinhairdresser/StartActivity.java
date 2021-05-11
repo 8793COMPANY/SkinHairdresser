@@ -52,7 +52,7 @@ public class StartActivity extends AppCompatActivity {
 
     // cpv
     CircleProgressView progress_circular;
-    float second = 20000;
+    float second = 28000;
     float prg = 0;
 
     // widget
@@ -193,9 +193,7 @@ public class StartActivity extends AppCompatActivity {
                 } else {
                     ModeChange("/hmirror",0);
                     ModeChange("/vflip",500);
-                    ModeChange(":81/one", 1000);
                     ModeChange(":81/stream", 1500);
-
 
                     wv.setForeground(getResources().getDrawable(android.R.color.transparent));
                     start_tv_1.setText("측정 준비 완료");
@@ -219,7 +217,7 @@ public class StartActivity extends AppCompatActivity {
             } else {
                 start_20_sec.setEnabled(false);
                 btn_stream.setEnabled(false);
-                start_tv_1.setText("첫 번째 측정 중 ···");
+                start_tv_1.setText("측정을 시작합니다 ···");
                 start_tv_2.setText("측정이 완료될 때까지 피부에서 떼지 마세요");
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -231,6 +229,67 @@ public class StartActivity extends AppCompatActivity {
 
                             Log.e("progress_circular", "progress: " + prg);
                             progress_circular.setValue(prg);
+
+                                // MODE 1
+                                if (4000 == prg) {
+                                    start_tv_1.setText("MODE 1 측정 중 ···");
+                                    wv.stopLoading();
+                                    wv.loadUrl("about:blank");
+                                    ModeChange(":81/one", 100);
+                                    ModeChange(":81/stream", 600);
+                                    vibrator.vibrate(100);
+                                    Toast.makeText(StartActivity.this, "MODE 1 Change", Toast.LENGTH_SHORT).show();
+                                }
+                                // MODE 2
+                                else if (8000 == prg) {
+                                    start_tv_1.setText("MODE 2 측정 중 ···");
+                                    wv.stopLoading();
+                                    wv.loadUrl("about:blank");
+                                    ModeChange(":81/two", 100);
+                                    ModeChange(":81/stream", 600);
+                                    vibrator.vibrate(100);
+                                    Toast.makeText(StartActivity.this, "MODE 2 Change", Toast.LENGTH_SHORT).show();
+                                }
+                                // MODE 3
+                                else if (12000 == prg) {
+                                    start_tv_1.setText("MODE 3 측정 중 ···");
+                                    wv.stopLoading();
+                                    wv.loadUrl("about:blank");
+                                    ModeChange(":81/three", 100);
+                                    ModeChange(":81/stream", 600);
+                                    vibrator.vibrate(100);
+                                    Toast.makeText(StartActivity.this, "MODE 3 Change", Toast.LENGTH_SHORT).show();
+                                }
+                                // MODE 4
+                                else if (16000 == prg) {
+                                    start_tv_1.setText("MODE 4 측정 중 ···");
+                                    wv.stopLoading();
+                                    wv.loadUrl("about:blank");
+                                    ModeChange(":81/four", 100);
+                                    ModeChange(":81/stream", 600);
+                                    vibrator.vibrate(100);
+                                    Toast.makeText(StartActivity.this, "MODE 4 Change", Toast.LENGTH_SHORT).show();
+                                }
+                                // MODE 5
+                                else if (20000 == prg) {
+                                    start_tv_1.setText("MODE 5 측정 중 ···");
+                                    wv.stopLoading();
+                                    wv.loadUrl("about:blank");
+                                    ModeChange(":81/five", 100);
+                                    ModeChange(":81/stream", 600);
+                                    vibrator.vibrate(100);
+                                    Toast.makeText(StartActivity.this, "MODE 5 Change", Toast.LENGTH_SHORT).show();
+                                }
+                                // MODE 6
+                                else if (24000 == prg) {
+                                    start_tv_1.setText("MODE 6 측정 중 ···");
+                                    wv.stopLoading();
+                                    wv.loadUrl("about:blank");
+                                    ModeChange(":81/six", 100);
+                                    ModeChange(":81/stream", 600);
+                                    vibrator.vibrate(100);
+                                    Toast.makeText(StartActivity.this, "MODE 6 Change", Toast.LENGTH_SHORT).show();
+                                }
                         } else {
                             if (!wifiManager.getConnectionInfo().getSSID().equals("\"" + networkSSID + "\"")) {
                                 Toast.makeText(StartActivity.this, "측정기 연결을 확인해주세요", Toast.LENGTH_SHORT).show();
