@@ -67,7 +67,7 @@ public class ResultMoreActivity extends AppCompatActivity {
         recommend_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ResultMoreActivity.this, RecommendActivity.class);
+                Intent intent = new Intent(ResultMoreActivity.this, RecommendWebView.class);
                 startActivity(intent);
                 finish();
             }
