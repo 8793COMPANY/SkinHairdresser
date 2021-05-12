@@ -62,7 +62,9 @@ public class ResultActivity extends AppCompatActivity {
         int j = 0;
         for (int i : values) {
             values[j] = random.nextInt(5) + 1;
+            Log.e("values",values[j]+"");
             j++;
+
         }
 
         // 준비된 DB 로우
@@ -205,6 +207,7 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ResultActivity.this, ResultMoreActivity.class);
+                intent.putExtra("value",values[6]+" "+values[1]+" "+values[0]+" "+values[5]+" "+values[2]+" "+values[3]+" "+values[4]);
                 startActivity(intent);
                 finish();
             }

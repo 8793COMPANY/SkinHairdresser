@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 import com.daimajia.numberprogressbar.NumberProgressBar;
 
+import java.util.Arrays;
+
 public class ResultMoreActivity extends AppCompatActivity {
     //피부 결과 자세히 화면
 
@@ -29,11 +31,22 @@ public class ResultMoreActivity extends AppCompatActivity {
     NumberProgressBar [] progress = new NumberProgressBar[7];
     TextView [] percentage = new TextView[8];
     NumberProgressBar numberProgressBar;
+    String [] values;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_more);
+
+        Intent intent = getIntent();
+        try {
+            values = intent.getStringExtra("value").split(" ");
+        }catch (NullPointerException e){
+            values = "100 55 90 47 80 90 87 89".split(" ");
+        }
+
+        if (values.length ==0)
+            Log.e("length","0");
 
         finish_btn = findViewById(R.id.finish_btn);
         recommend_btn = findViewById(R.id.recommend_btn);
@@ -51,15 +64,17 @@ public class ResultMoreActivity extends AppCompatActivity {
 
 
 
-        Intent intent = getIntent();
-        String [] values = progress_values[intent.getIntExtra("value",0)].split(" ");
+//        Intent intent = getIntent();
+//        String [] values = progress_values[intent.getIntExtra("value",0)].split(" ");
 
-        for (int i=0; i <6; i++){
-            Log.e("list",Integer.parseInt(values[i])+"");
-            progress[i].setProgress(Integer.parseInt(values[i]));
-            if (Integer.parseInt(values[i]) <30){
+        int score = 0;
+        for (int i=0; i <7; i++){
+            Log.e("list",values[i]+"");
+            score = Integer.parseInt(values[i]) *15;
+            progress[i].setProgress(score);
+            if (score <30){
                 progress[i].setReachedBarColor(Color.parseColor("#dfc2ac"));
-            }else if(Integer.parseInt(values[i]) >=30 && Integer.parseInt(values[i]) <60){
+            }else if(score >=30 && score <60){
                 progress[i].setReachedBarColor(Color.parseColor("#bc8b6c"));
             }else{
                 progress[i].setReachedBarColor(Color.parseColor("#ccbc8b6c"));
