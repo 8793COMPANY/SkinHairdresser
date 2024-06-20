@@ -28,7 +28,8 @@
         <activity android:name=".LanguageActivity" />
         <activity android:name=".ManageActivity" />
         <activity android:name=".JoinActivity" />
-        <activity android:name=".IntroActivity">
+        <activity android:name=".IntroActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,7 +61,8 @@
 
         <receiver
             android:name=".BroadcastReceiver.WifiReceiver"
-            android:enabled="true">
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />

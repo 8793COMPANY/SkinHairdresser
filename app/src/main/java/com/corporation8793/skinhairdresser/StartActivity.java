@@ -44,7 +44,7 @@ public class StartActivity extends AppCompatActivity {
     private final int PERMISSIONS_REQUEST_RESULT = 1;
 
     WifiReceiver wifiReceiver = new WifiReceiver();
-    String networkSSID = "ESP32-Access-Point";
+    String networkSSID = "doorlock";
     WifiManager wifiManager;
 
     // cw

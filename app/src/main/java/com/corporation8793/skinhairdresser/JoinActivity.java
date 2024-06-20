@@ -95,7 +95,7 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
             join_btn.setTextColor(getResources().getColor(R.color.white));
             join_btn.setEnabled(true);
 
-            if (sharedPreferences.getInt("sex",0) == 0){
+            if (sharedPreferences.getInt("gender",0) == 0){
                 woman_btn.setBackgroundResource(R.drawable.woman_btn_on);
                 woman_btn.setTextColor(getResources().getColor(R.color.white));
             }else{
@@ -112,7 +112,7 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
                 woman_btn.setTextColor(getResources().getColor(R.color.white));
                 man_btn.setBackgroundColor(getResources().getColor(R.color.transparent));
                 man_btn.setTextColor(getResources().getColor(R.color.main_brown));
-                editor.putInt("sex",0);
+                editor.putInt("gender",0);
             }
         });
 
@@ -123,7 +123,7 @@ public class JoinActivity extends AppCompatActivity implements TextWatcher {
                 woman_btn.setTextColor(getResources().getColor(R.color.main_brown));
                 man_btn.setBackgroundColor(getResources().getColor(R.color.main_brown));
                 man_btn.setTextColor(getResources().getColor(R.color.white));
-                editor.putInt("sex",1);
+                editor.putInt("gender",1);
             }
         });
 
